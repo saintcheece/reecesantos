@@ -1,156 +1,194 @@
 <!DOCTYPE html>
-<head>
-    <!-- LINK STYLESHEET -->
-    <link rel="stylesheet" href="styles.css">
+<html>
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script src = "vertigo.js"></script>
+        
+        <title>reece santos</title>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- LINK FONT ONLINE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- MONTSERRAT -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap" rel="stylesheet">
 
-    <!-- FONT: MANROPE -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <img class="head-anim" src="assets/images/me.png"/>
-    <div class="section-head">
-        <div class="section-head-content">
-            <div class="navbar">
-                <div class="navbar-select">
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-skills">skills()</a></div>
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-education">education()</a></div>
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-projects">projects()</a></div>
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-me">me()</a></div>
-                </div>
-            </div>
-            <div class="titlescreen">
-                <div class="titlescreen-block">
-                    <div class="titlescreen-block-content">
-                        <h1>santos.reece()</h1>
-                        <h3>developer-in-training</h3>
+        <!-- MONTSERRAT ALTERNATIVE -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap" rel="stylesheet">
+
+        <style>
+            @font-face {
+                font-family: Inkling Regular;
+                src: url("C:/Users/reece/Documents/Programs/Web/personal-website/resources/fonts/Inkling Regular.otf") format("opentype");
+            }
+            h1 {
+                font-family: 'Montserrat Alternates', sans-serif;
+            }
+            h2 {
+                font-family: 'Montserrat', sans-serif;
+            }
+            h3 {
+                font-family: 'Montserrat', sans-serif;
+
+            }
+            p {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--cream);
+                font-size: 1.5vw;
+            }
+            button{
+                font-family: 'Montserrat', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <div id="nav-bar">
+            <button class="nav-btn">projects</button>
+            <button class="nav-btn">resume</button>
+            <button class="nav-btn">blogs</button>
+        </div>
+
+        <div id="container"></div>
+
+        <!-- HEADER -->
+        <div id = "header">
+            <img id="header-photo" src="resources\images\point1.png" alt="me, pointing">
+            <div id="header-content">
+                <div><h1 id = "header-title">reece<br>santos</h1></div>
+                <div id = "header-subtitle">
+                    <div id = "header-subtitle-connector">can</div>
+                    <div id = "header-subtitle-skilltape-space">
+                        <div id = "header-subtitle-skilltape">
+                            <a id="header-subtitle-skilltape-list">DEVELOP + ILLUSTRATE + ANIMATE + EDIT + DESIGN + DEVELOP + ILLUSTRATE + ANIMATE + EDIT + DESIGN + </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-        <!-- THE REST OF THE CONTENT BESIDES GENERAL INFO -->
-    <div class="section-body">
-        <section id="section-body-skills">
-            <div class="skills">
-                <div class="skills-title">
-                    skills()
-                </div>
-                <div class="skills-content">
-                    <h2>Media</h2>
-                    <p>Illustrator, Figma, Autodesk Sketchbook, Krita, Davinci Resolve, Photoshop, Krita, HiPaint, Blender, FlutterFlow</p>
-                </div>
-                <div class="skills-content">
-                    <h2>Development</h2>
-                    <p>Python, Java, Dart, HTML/CSS, Javascript, Bootstrap, C#, MariaDB, PHP, JSON</p>
+        <!-- BUTTON THAT SCROLLS TO TOP -->
+        <button id="btn-to-top" onclick="toTop()">back to top</button>
+
+        <!-- SHOWCASE BATCH 1 -->
+        <div class="works" id="works-b1">
+            <div class="work-a">
+                <img class="work-img" src="resources\images\yt-videos.png">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-a">Youtube Animations</h2>
+                    <p class="work-desc-body">collection of animated works I made mostly as school activities such as visual story telling, and video essays.</p>
                 </div>
             </div>
-        </section>
-        <!-- EDUCATION -->
-        <section id="section-body-education">
-            <div class="educ">
-                <!-- EDUCATION TITLE -->
-                <div class="educ-title">
-                    education() 
-                </div>
-                <!-- PROVIDER 1 -->
-                <div class="educ-prov-desc">
-                    <div>
-                        <p class="cert-title">Python Certification</p>
-                        <p>freeCodeCamp</p>
-                        <p>2023</p>
-                        <p>Online Course</p>
-                    </div>
-                </div>
-                <div class="educ-prov-pic">
-                    <img src="assets/images/freeCodeCamp.svg"/>
-                </div>
-                <!-- PROVIDER 2 -->
-                <div class="educ-prov-desc">
-                    <div>
-                        <p class="cert-title">Information Communication Technology</p>
-                        <p>Aguinaldo J. Santos National Highschool</p>
-                        <p>2020-2023</p>
-                        <p>Senior Highschool</p>
-                    </div>
-                </div>
-                <div class="educ-prov-pic">
-                    <img src="assets/images/ajsnhs.svg"/>
+            <div class="work-b">
+                <img class="work-img" src="resources/images/graphics.png">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-b">Schoolwork Designs</h2>
+                    <p class="work-desc-body">a drive where I store my schoolworks that involves graphical works including unpublished edits.</p>
                 </div>
             </div>
-        </section>
-        <!-- PROJECTS -->
-        <section id="section-body-projects">
-            <div class="projects">
-                <div class="projects-title">
-                    projects()
-                </div>
-                <a href="https://github.com/saintcheece/vertigo" target="_blank">
-                    <div class="projects-content">
-                        <div class="projects-content-layout">
-                            <div class="projects-content-layout-title">
-                                <p>Vertigo</p>
-                            </div>
-                            <div class="projects-content-layout-icon">
-                                <img src="assets/images/arrow.svg"/>
-                            </div>
-                            <div class="projects-content-layout-desc">
-                                <p>a simple *portable* square animation loop.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <div class="projects-content">
-                    <div class="projects-content-layout">
-                        <div class="projects-content-layout-title">
-                            <p>HomeBudi</p>
-                        </div>
-                        <div class="projects-content-layout-icon">
-                            <img src="assets/images/arrow.svg"/>
-                        </div>
-                        <div class="projects-content-layout-desc">
-                            <p>a mobile application prototype for college.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-content">
-                    <div class="projects-content-layout">
-                        <div class="projects-content-layout-title">
-                            <p>Integrative Projects</p>
-                        </div>
-                        <div class="projects-content-layout-icon">
-                            <img src="assets/images/arrow.svg"/>
-                        </div>
-                        <div class="projects-content-layout-desc">
-                            <p>a pair of projects integrating APIs such as Pollinations, OCR.Space, and more.</p>
-                        </div>
-                    </div>
+            <div class="work-a">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-a">freeCodeCamp Python Certification</h2>
+                    <p class="work-desc-body">look at this cool html page with my name. I worked 3 weeks for that!</p>
                 </div>
             </div>
-        </section>
-        <!-- ABOUT ME -->
-        <section id="section-body-me">
-            <div class="me">
-                <div class="me-title">
-                    me()
-                </div>
-                <div class="me-desc">
-                    <p>//started my coding journey in 2019 and is <b> currently taking Bachelor of Science in Information Technology at National University Baliwag.</b></p>
-                </div>
-                <div class="socials">
-                    <a href="https://github.com/saintcheece" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-github.svg"/>GitHub</div></a>
-                    <a href="https://web.facebook.com/saintcheece/" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-facebook.svg"/>Facebook</div></a>
-                    <a href="https://www.linkedin.com/in/reece-santos-b6243b246/" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-linkedin.svg"/>LinkedIn</div></a>
-                    <a href="https://www.youtube.com/@rees2017" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-youtube.svg"/>YouTube</div></a>
+        </div>
+        <div class="works" id="works-b2">
+            <div class="work-b">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-b">Commission Works</h2>
+                    <p class="work-desc-body">another drive containing the works I was paid to do.</p>
                 </div>
             </div>
-        </section>
-    </div>
-    <div class="section-body-footer">
-        made with &#129472; by Reece Santos
-    </div>
-</body>
+            <div class="work-a">
+                <img class="work-img" src="resources\images\mathibig.png">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-a">Adventures of Math-Ibig</h2>
+                    <p class="work-desc-body">a little highschool textbook-making event where I worked with my adviser as an illustrator in 2019. (yes, we won)</p>
+                </div>
+            </div>
+            <div class="work-b">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-b">Personal Works</h2>
+                    <p class="work-desc-body">artworks I made to post something for attention.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MID-SENTENCE -->
+        <div id="mid-sentence">
+            <p>Started my coding journey at 2019...</p>
+            <p>...and there was lower than average progress for that span of years.</p>
+            <p>kms</p>
+        </div>
+
+        <!-- SHOWCASE BATCH 2 -->
+        </div>
+        <div class="works" id="works-b3">
+            <div class="work-a">
+                <img class="work-img" src="resources\images\vertigo.png">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-a">Vertigo</h2>
+                    <p class="work-desc-body">a loop of expanding orange and brown squares I made for this page.</p>
+                </div>
+            </div>
+            <div class="work-b">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-b">---</h2>
+                    <p class="work-desc-body">description.</p>
+                </div>
+            </div>
+            <div class="work-a">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-a">---</h2>
+                    <p class="work-desc-body">description.</p>
+                </div>
+            </div>
+        </div>
+        <div class="works" id="works-b4">
+            <div class="work-b">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-b">---</h2>
+                    <p class="work-desc-body">description.</p>
+                </div>
+            </div>
+            <div class="work-a">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-a">---</h2>
+                    <p class="work-desc-body">description.</p>
+                </div>
+            </div>
+            <div class="work-b">
+                <div class="work-desc">
+                    <h2 class="work-desc-head-b">---</h2>
+                    <p class="work-desc-body">description.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- END -->
+        <div id="end">
+            <div id="end-profile">
+			    <div id = "end-profile-frame">
+                    <img id="profile-frame-image" src="resources\images\square.png"></img>
+                    <div id="profile-frame-border"></div>
+                </div>
+                <div id = "my-languages"></div>
+                <div id = "greetings"></div>
+            </div>
+			<div id="end-message">
+				<h2>'ey!</h2>
+				<p class="end-message-description">the name's Reece. I'm currently taking the course of Bachelor of Science in Information Technology at National University Baliwag.</p>
+				<p class="end-message-description">I'm currently working to be a Database Manager while developing my own projects, but if you have one you can suggest I work on, you can drop me a line and I'll catch you back right away.</p>
+            </div>
+		</div>
+    </body>
+
+    <div id="credit">made with &#129472; by Reece Santos</div>
+
+    <script src="button-functions.js"></script>
+    <script src = "low-fps-animations.js"></script>
+    <script> vertigo("sq1")</script>
+
+</html>
