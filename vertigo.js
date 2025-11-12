@@ -26,7 +26,7 @@ function vertigo(shape) {
 
             newSquare.style.width = "0%";
             newSquare.style.height = "0%";
-            newSquare.style.backgroundColor = nthElement % 2 == 0 ? "#30211C" : "#EA5B0C";
+            newSquare.style.backgroundColor = nthElement % 2 == 0 ? "#F15D22" : "#181d27";
             newSquare.style.zIndex = nthElement;
 
             container.appendChild(newSquare);

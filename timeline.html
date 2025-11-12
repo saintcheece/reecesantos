@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Vertical Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #2b3442;
+            color: #ffffff;
+            padding: 60px 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 48px;
+            color: #ff7b54;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-transform: lowercase;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            padding-left: 150px;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 90px;
+            top: 31px;
+            width: 3px;
+            height: calc(100% + 60px);
+            background: #ff7b54;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 20px;
+            color: #ff7b54;
+            font-weight: normal;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 78px;
+            top: 5px;
+            width: 26px;
+            height: 26px;
+            background: #ff7b54;
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            padding-left: 0;
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .timeline-subtitle {
+            font-size: 16px;
+            color: #a8b2c1;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="section-title">education</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2020</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Information Communication Technology</div>
+                    <div class="timeline-subtitle">Aguinaldo J. Santos National Highschool</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Bachelor of Science in Information Technology with Specialization in Mobile and Web Development</div>
+                    <div class="timeline-subtitle">NU Baliwag</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">certifications</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Python Certification</div>
+                    <div class="timeline-subtitle">freeCodeCamp</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

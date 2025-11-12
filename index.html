@@ -1,194 +1,291 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF=8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <script src = "vertigo.js"></script>
-        
-        <title>reece santos</title>
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<head>
+    <!-- LINK STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
 
-        <!-- MONTSERRAT -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <!-- LINK FUNCTIONS -->
+    <script src = "vertigo.js"></script>
 
-        <!-- MONTSERRAT ALTERNATIVE -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap" rel="stylesheet">
+    <!-- LINK FONT ONLINE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <style>
-            @font-face {
-                font-family: Inkling Regular;
-                src: url("C:/Users/reece/Documents/Programs/Web/personal-website/resources/fonts/Inkling Regular.otf") format("opentype");
-            }
-            h1 {
-                font-family: 'Montserrat Alternates', sans-serif;
-            }
-            h2 {
-                font-family: 'Montserrat', sans-serif;
-            }
-            h3 {
-                font-family: 'Montserrat', sans-serif;
-
-            }
-            p {
-                font-family: 'Montserrat', sans-serif;
-                color: var(--cream);
-                font-size: 1.5vw;
-            }
-            button{
-                font-family: 'Montserrat', sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- NAV BAR -->
-        <div id="nav-bar">
-            <button class="nav-btn">projects</button>
-            <button class="nav-btn">resume</button>
-            <button class="nav-btn">blogs</button>
-        </div>
-
-        <div id="container"></div>
-
-        <!-- HEADER -->
-        <div id = "header">
-            <img id="header-photo" src="resources\images\point1.png" alt="me, pointing">
-            <div id="header-content">
-                <div><h1 id = "header-title">reece<br>santos</h1></div>
-                <div id = "header-subtitle">
-                    <div id = "header-subtitle-connector">can</div>
-                    <div id = "header-subtitle-skilltape-space">
-                        <div id = "header-subtitle-skilltape">
-                            <a id="header-subtitle-skilltape-list">DEVELOP + ILLUSTRATE + ANIMATE + EDIT + DESIGN + DEVELOP + ILLUSTRATE + ANIMATE + EDIT + DESIGN + </a>
-                        </div>
+    <!-- FONT: MANROPE -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="section-head">
+        <div class="section-head-content">
+            <div class="navbar">
+                <div class="navbar-select">
+                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-skills">projects</a></div>
+                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-education">aboutMe</a></div>
+                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-projects">education</a></div>
+                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-me">testimonies</a></div>
+                </div>
+            </div>
+            <div id="container"></div>
+            <img id="header-photo" src="assets/images/me-icecream.png">
+            <div class="titlescreen">
+                <div class="titlescreen-block">
+                    <div class="titlescreen-block-content">
+                        <h1>reece santos</h1>
+                        <h3>developer-in-training</h3>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- BUTTON THAT SCROLLS TO TOP -->
-        <button id="btn-to-top" onclick="toTop()">back to top</button>
+        <!-- THE REST OF THE CONTENT BESIDES GENERAL INFO -->
+    <div class="section-body">
 
-        <!-- SHOWCASE BATCH 1 -->
-        <div class="works" id="works-b1">
-            <div class="work-a">
-                <img class="work-img" src="resources\images\yt-videos.png">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-a">Youtube Animations</h2>
-                    <p class="work-desc-body">collection of animated works I made mostly as school activities such as visual story telling, and video essays.</p>
+        <section id="projects">
+            <a class="section-title">projects
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                </svg>
+            </a>
+            <div class="projects-list">
+                <!-- PROJECT ITEMS -->
+                <div class="projects-list-item">
+                    <div class="img-mock"></div>
+                    <!-- <img src=""/> -->
+                    <div class="project-meta">
+                        <h3>Project Title</h3>
+                        <p class="project-category">project-category</p>
+                        <p class="project-description">a short description about the project.</p>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="button-dark">
+                                view
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="projects-list-item">
+                    <div class="img-mock"></div>
+                    <!-- <img src=""/> -->
+                    <div class="project-meta">
+                        <h3>Project Title</h3>
+                        <p class="project-category">project-category</p>
+                        <p class="project-description">a short description about the project.</p>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="button-dark">
+                                view
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="projects-list-item">
+                    <div class="img-mock"></div>
+                    <!-- <img src=""/> -->
+                    <div class="project-meta">
+                        <h3>Project Title</h3>
+                        <p class="project-category">project-category</p>
+                        <p class="project-description">a short description about the project.</p>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="button-dark">
+                                view
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="work-b">
-                <img class="work-img" src="resources/images/graphics.png">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-b">Schoolwork Designs</h2>
-                    <p class="work-desc-body">a drive where I store my schoolworks that involves graphical works including unpublished edits.</p>
+            <a href="https://github.com/saintcheece" target="_blank">
+                <div class="button-light">
+                    view more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                    </svg>
                 </div>
-            </div>
-            <div class="work-a">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-a">freeCodeCamp Python Certification</h2>
-                    <p class="work-desc-body">look at this cool html page with my name. I worked 3 weeks for that!</p>
-                </div>
-            </div>
-        </div>
-        <div class="works" id="works-b2">
-            <div class="work-b">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-b">Commission Works</h2>
-                    <p class="work-desc-body">another drive containing the works I was paid to do.</p>
-                </div>
-            </div>
-            <div class="work-a">
-                <img class="work-img" src="resources\images\mathibig.png">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-a">Adventures of Math-Ibig</h2>
-                    <p class="work-desc-body">a little highschool textbook-making event where I worked with my adviser as an illustrator in 2019. (yes, we won)</p>
-                </div>
-            </div>
-            <div class="work-b">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-b">Personal Works</h2>
-                    <p class="work-desc-body">artworks I made to post something for attention.</p>
-                </div>
-            </div>
-        </div>
+            </a>
+        </section>
 
-        <!-- MID-SENTENCE -->
-        <div id="mid-sentence">
-            <p>Started my coding journey at 2019...</p>
-            <p>...and there was lower than average progress for that span of years.</p>
-            <p>kms</p>
-        </div>
+        <section id="me">
+            <a class="section-title">aboutMe
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                </svg>
+            </a>
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="assets/images/asdadsadasdasd (4).png"/>
+                </div>
+                <div class="profile-meta">
+                    <p>a graduating mobile and web developer from NU Baliwag with a handful of experience in making designs and databases work.</p>
+                    <p>Also makes use of my hobby; working on creative digital content as freelance and for organizations.</p>
+                    <div class="profile-meta-socials">
+                        <!-- SOCIAL BUTTONS -->
+                         <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0 0 18 18">
+                                    <path d="M18 9.055C18 4.054 13.97 0 9.001 0 4.03.001 0 4.054 0 9.056 0 13.575 3.291 17.321 7.593 18v-6.327H5.309V9.056h2.286V7.06c0-2.27 1.344-3.522 3.4-3.522.985 0 2.014.176 2.014.176v2.228h-1.135c-1.117 0-1.466.698-1.466 1.415v1.698h2.495l-.398 2.617h-2.098v6.327C14.71 17.319 18 13.574 18 9.055Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0 0 18 18">
+                                    <path d="M0 1.29C0 .576.592 0 1.322 0h15.356C17.408 0 18 .577 18 1.29v15.42c0 .713-.592 1.29-1.322 1.29H1.322C.592 18 0 17.423 0 16.71V1.29Zm5.56 13.778V6.94h-2.7v8.128h2.7ZM4.21 5.83c.942 0 1.529-.623 1.529-1.404-.017-.798-.585-1.404-1.51-1.404S2.7 3.629 2.7 4.426c0 .78.586 1.404 1.493 1.404h.018Zm5.522 9.238v-4.54c0-.242.018-.485.09-.658.195-.485.64-.988 1.386-.988.978 0 1.368.745 1.368 1.838v4.348h2.701v-4.662c0-2.497-1.332-3.658-3.109-3.658-1.433 0-2.076.787-2.436 1.342v.028h-.018l.018-.028V6.94h-2.7c.034.763 0 8.128 0 8.128h2.7Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0 0 19 18">
+                                    <path d="M9.333 0C4.177 0 0 4.13 0 9.228c0 4.083 2.672 7.532 6.382 8.754.466.081.641-.196.641-.438 0-.22-.011-.946-.011-1.719-2.345.427-2.952-.565-3.139-1.084-.105-.265-.56-1.084-.956-1.303-.327-.173-.794-.6-.012-.612.735-.011 1.26.67 1.435.946.84 1.396 2.182 1.004 2.718.761.082-.6.327-1.003.595-1.234-2.076-.23-4.246-1.026-4.246-4.556a3.57 3.57 0 0 1 .956-2.48c-.093-.23-.42-1.176.094-2.445 0 0 .781-.242 2.566.946a8.754 8.754 0 0 1 2.334-.312 8.74 8.74 0 0 1 2.333.312c1.785-1.2 2.567-.946 2.567-.946.513 1.269.186 2.215.093 2.445.595.646.957 1.465.957 2.48 0 3.541-2.182 4.326-4.259 4.556.339.289.63.842.63 1.708 0 1.234-.011 2.226-.011 2.537 0 .242.175.53.641.438a9.338 9.338 0 0 0 4.605-3.365 9.169 9.169 0 0 0 1.754-5.39C18.667 4.13 14.49 0 9.333 0Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 18 12.64">
+                                    <path class="cls-1" d="M9.06,0h.1c.93,0,5.61.04,6.87.38.78.21,1.38.82,1.59,1.6.11.43.19.99.25,1.58v.12s.04.29.04.29v.12c.08,1.03.09,1.99.09,2.2v.09c0,.77-.04,1.55-.09,2.32v.12s-.02.12-.02.12c-.06.64-.14,1.28-.26,1.75-.21.78-.81,1.39-1.59,1.6-1.31.35-6.26.38-6.95.38h-.16c-.35,0-1.78,0-3.29-.06h-.19s-.1-.01-.1-.01h-.19s-.19-.02-.19-.02c-1.25-.06-2.44-.14-2.99-.29-.78-.21-1.38-.82-1.59-1.6-.12-.47-.21-1.11-.27-1.75v-.12s-.02-.12-.02-.12c-.06-.76-.09-1.53-.09-2.29v-.14c0-.24.01-1.08.07-2v-.12s.01-.06.01-.06v-.12s.03-.29.03-.29v-.12c.06-.58.14-1.15.26-1.58.21-.78.81-1.39,1.59-1.6.55-.15,1.74-.24,2.99-.29h.19s.19-.01.19-.01h.1s.19-.01.19-.01c1.07-.04,2.14-.05,3.21-.06,0,0,.22,0,.22,0ZM7.2,3.61v5.42l4.68-2.71-4.68-2.71h0Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0.5 94.187 511 323.626">
+                                    <path d="M206.729 238.87s48.358-3.59 48.358-60.297c0-56.711-39.563-84.387-89.678-84.387H.5v316.909h164.909s100.671 3.18 100.671-93.537c0 .001 4.389-78.688-59.351-78.688zm-53.19-88.357h11.87s22.416 0 22.416 32.973c0 32.969-13.183 37.749-28.136 37.749H73.161v-70.722h80.378zm7.21 204.257H73.161v-84.69h92.248s33.41-.438 33.41 43.522c0 37.068-24.954 40.888-38.07 41.168zm239.593-179.953c-121.873 0-121.765 121.766-121.765 121.766s-8.362 121.141 121.765 121.141c0 0 108.438 6.195 108.438-84.271h-55.768s1.86 34.068-50.81 34.068c0 0-55.777 3.738-55.777-55.135H510.64c0-.001 17.968-137.569-110.298-137.569zm-54.53 95.263s6.81-48.846 55.769-48.846c48.949 0 48.336 48.846 48.336 48.846H345.812zm117.096-118.199H332.159v-39.025h130.749v39.025z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- SHOWCASE BATCH 2 -->
-        </div>
-        <div class="works" id="works-b3">
-            <div class="work-a">
-                <img class="work-img" src="resources\images\vertigo.png">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-a">Vertigo</h2>
-                    <p class="work-desc-body">a loop of expanding orange and brown squares I made for this page.</p>
-                </div>
-            </div>
-            <div class="work-b">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-b">---</h2>
-                    <p class="work-desc-body">description.</p>
-                </div>
-            </div>
-            <div class="work-a">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-a">---</h2>
-                    <p class="work-desc-body">description.</p>
-                </div>
-            </div>
-        </div>
-        <div class="works" id="works-b4">
-            <div class="work-b">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-b">---</h2>
-                    <p class="work-desc-body">description.</p>
-                </div>
-            </div>
-            <div class="work-a">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-a">---</h2>
-                    <p class="work-desc-body">description.</p>
-                </div>
-            </div>
-            <div class="work-b">
-                <div class="work-desc">
-                    <h2 class="work-desc-head-b">---</h2>
-                    <p class="work-desc-body">description.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- END -->
-        <div id="end">
-            <div id="end-profile">
-			    <div id = "end-profile-frame">
-                    <img id="profile-frame-image" src="resources\images\square.png"></img>
-                    <div id="profile-frame-border"></div>
+
+        <section id="section-body-skills">
+            <div class="skills">
+                <div class="skills-title">
+                    projects
                 </div>
-                <div id = "my-languages"></div>
-                <div id = "greetings"></div>
+                <div class="skills-content">
+                    <h2>Media</h2>
+                    <p>Illustrator, Figma, Autodesk Sketchbook, Krita, Davinci Resolve, Photoshop, Krita, HiPaint, Blender, FlutterFlow</p>
+                </div>
+                <div class="skills-content">
+                    <h2>Development</h2>
+                    <p>Python, Java, Dart, HTML/CSS, Javascript, Bootstrap, C#, MariaDB, PHP, JSON</p>
+                </div>
             </div>
-			<div id="end-message">
-				<h2>'ey!</h2>
-				<p class="end-message-description">the name's Reece. I'm currently taking the course of Bachelor of Science in Information Technology at National University Baliwag.</p>
-				<p class="end-message-description">I'm currently working to be a Database Manager while developing my own projects, but if you have one you can suggest I work on, you can drop me a line and I'll catch you back right away.</p>
+        </section>
+        <!-- EDUCATION -->
+        <section id="section-body-education">
+            <div class="educ">
+                <!-- EDUCATION TITLE -->
+                <div class="educ-title">
+                    education() 
+                </div>
+                <!-- PROVIDER 1 -->
+                <div class="educ-prov-desc">
+                    <div>
+                        <p class="cert-title">Python Certification</p>
+                        <p>freeCodeCamp</p>
+                        <p>2023</p>
+                        <p>Online Course</p>
+                    </div>
+                </div>
+                <div class="educ-prov-pic">
+                    <img src="assets/images/freeCodeCamp.svg"/>
+                </div>
+                <!-- PROVIDER 2 -->
+                <div class="educ-prov-desc">
+                    <div>
+                        <p class="cert-title">Information Communication Technology</p>
+                        <p>Aguinaldo J. Santos National Highschool</p>
+                        <p>2020-2023</p>
+                        <p>Senior Highschool</p>
+                    </div>
+                </div>
+                <div class="educ-prov-pic">
+                    <img src="assets/images/ajsnhs.svg"/>
+                </div>
             </div>
-		</div>
-    </body>
-
-    <div id="credit">made with &#129472; by Reece Santos</div>
-
-    <script src="button-functions.js"></script>
-    <script src = "low-fps-animations.js"></script>
-    <script> vertigo("sq1")</script>
-
-</html>
+        </section>
+        <!-- PROJECTS -->
+        <section id="section-body-projects">
+            <div class="projects">
+                <div class="projects-title">
+                    projects()
+                </div>
+                <a href="https://github.com/saintcheece/vertigo" target="_blank">
+                    <div class="projects-content">
+                        <div class="projects-content-layout">
+                            <div class="projects-content-layout-title">
+                                <p>Vertigo</p>
+                            </div>
+                            <div class="projects-content-layout-icon">
+                                <img src="assets/images/arrow.svg"/>
+                            </div>
+                            <div class="projects-content-layout-desc">
+                                <p>a simple *portable* square animation loop.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="projects-content">
+                    <div class="projects-content-layout">
+                        <div class="projects-content-layout-title">
+                            <p>HomeBudi</p>
+                        </div>
+                        <div class="projects-content-layout-icon">
+                            <img src="assets/images/arrow.svg"/>
+                        </div>
+                        <div class="projects-content-layout-desc">
+                            <p>a mobile application prototype for college.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-content">
+                    <div class="projects-content-layout">
+                        <div class="projects-content-layout-title">
+                            <p>Integrative Projects</p>
+                        </div>
+                        <div class="projects-content-layout-icon">
+                            <img src="assets/images/arrow.svg"/>
+                        </div>
+                        <div class="projects-content-layout-desc">
+                            <p>a pair of projects integrating APIs such as Pollinations, OCR.Space, and more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT ME -->
+        <section id="section-body-me">
+            <div class="me">
+                <div class="me-title">
+                    me()
+                </div>
+                <div class="me-desc">
+                    <p>//started my coding journey in 2019 and is <b> currently taking Bachelor of Science in Information Technology at National University Baliwag.</b></p>
+                </div>
+                <div class="socials">
+                    <a href="https://github.com/saintcheece" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-github.svg"/>GitHub</div></a>
+                    <a href="https://web.facebook.com/saintcheece/" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-facebook.svg"/>Facebook</div></a>
+                    <a href="https://www.linkedin.com/in/reece-santos-b6243b246/" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-linkedin.svg"/>LinkedIn</div></a>
+                    <a href="https://www.youtube.com/@rees2017" target="_blank"><div class="social-button"><img class="social-button-icon" src="assets/images/icon-youtube.svg"/>YouTube</div></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="section-body-footer">
+        made with &#129472; by Reece Santos
+    </div>
+    <script>
+        vertigo("sq0"); // Start the animation
+    </script>
+</body>
