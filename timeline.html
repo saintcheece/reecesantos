@@ -18,7 +18,7 @@
             padding: 60px 40px;
         }
 
-        .container {
+        .timeline-container {
             max-width: 900px;
             margin: 0 auto;
         }
@@ -31,49 +31,7 @@
             text-transform: lowercase;
         }
 
-        .timeline {
-            position: relative;
-            padding-left: 0;
-        }
-
-        .timeline-item {
-            margin-bottom: 60px;
-            position: relative;
-            padding-left: 150px;
-        }
-
-        .timeline-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 90px;
-            top: 31px;
-            width: 3px;
-            height: calc(100% + 60px);
-            background: #ff7b54;
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 20px;
-            color: #ff7b54;
-            font-weight: normal;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 78px;
-            top: 5px;
-            width: 26px;
-            height: 26px;
-            background: #ff7b54;
-            border-radius: 50%;
-        }
-
-        .timeline-content {
-            padding-left: 0;
-        }
+        
 
         .timeline-title {
             font-size: 24px;
@@ -91,7 +49,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="timeline-container">
         <h2 class="section-title">education</h2>
         
         <div class="timeline">
