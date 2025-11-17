@@ -5,6 +5,7 @@
 
     <!-- LINK FUNCTIONS -->
     <script src = "vertigo.js"></script>
+    <script src = "functions.js"></script>
 
     <!-- LINK FONT ONLINE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +19,27 @@
         <div class="section-head-content">
             <div class="navbar">
                 <div class="navbar-select">
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-skills">projects</a></div>
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-education">aboutMe</a></div>
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-projects">education</a></div>
-                    <div class="navbar-select-button"><a class="navbar-link" href="#section-body-me">testimonies</a></div>
+                    <div class="navbar-select-button">
+                        <a class="navbar-link link-left" href="#section-body-skills">projects
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="navbar-select-button">
+                        <a class="navbar-link link-left" href="#section-body-skills">aboutMe
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="navbar-select-button">
+                        <a class="navbar-link link-left" href="#section-body-skills">contacts
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div id="container"></div>
@@ -40,11 +58,13 @@
         <!-- THE REST OF THE CONTENT BESIDES GENERAL INFO -->
     <div class="section-body">
         <section id="projects">
-            <a class="section-title">projects
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
-                </svg>
-            </a>
+            <div>
+                <a class="section-title" href="#">projects
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                    </svg>
+                </a>
+            </div>
             <div class="projects-list">
                 <!-- PROJECT ITEMS -->
                 <div class="projects-list-item">
@@ -55,9 +75,11 @@
                             <p class="project-title">Project Title</p>
                             <p class="project-category">project-category</p>
                         </div>
-                        <p class="project-description">a short description about the project.</p>
+                        <div class="project-description">
+                            a short description about the project.
+                        </div>
                         <div class="project-button-wrapper">
-                            <a href="https://github.com/saintcheece" target="_blank">
+                            <a>
                                 <div class="button-dark">
                                     view
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
@@ -72,34 +94,13 @@
                     <div class="img-mock"></div>
                     <!-- <img src=""/> -->
                     <div class="project-meta">
-                        <div class="project-meta-content">
-                            <div class="project-header">
-                                <p class="project-title">Project Title</p>
-                                <p class="project-category">project-category</p>
-                            </div>
-                            <p class="project-description">a short sdfsdfdfsdfffdfsfdfsdfdescription about the project.</p>
-                            <div class="project-button-wrapper">
-                                <a href="https://github.com/saintcheece" target="_blank">
-                                    <div class="button-dark">
-                                        view
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                                            <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-list-item">
-                    <div class="img-mock"></div>
-                    <!-- <img src=""/> -->
-                    <div class="project-meta">
                         <div class="project-header">
                             <p class="project-title">Project Title</p>
                             <p class="project-category">project-category</p>
                         </div>
-                        <p class="project-description">a short description about the project.</p>
+                        <div class="project-description">
+                            a short description about the project.
+                        </div>
                         <div class="project-button-wrapper">
                             <a href="https://github.com/saintcheece" target="_blank">
                                 <div class="button-dark">
@@ -120,7 +121,54 @@
                             <p class="project-title">Project Title</p>
                             <p class="project-category">project-category</p>
                         </div>
-                        <p class="project-description">a short description about the project.</p>
+                        <div class="project-description">
+                            a short description about the project.
+                        </div>
+                        <div class="project-button-wrapper">
+                            <a href="https://github.com/saintcheece" target="_blank">
+                                <div class="button-dark">
+                                    view
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-list-item">
+                    <div class="img-mock"></div>
+                    <!-- <img src=""/> -->
+                    <div class="project-meta">
+                        <div class="project-header">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-category">project-category</p>
+                        </div>
+                        <div class="project-description">
+                            a short description about the project.
+                        </div>
+                        <div class="project-button-wrapper">
+                            <a href="https://github.com/saintcheece" target="_blank">
+                                <div class="button-dark">
+                                    view
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div><div class="projects-list-item">
+                    <div class="img-mock"></div>
+                    <!-- <img src=""/> -->
+                    <div class="project-meta">
+                        <div class="project-header">
+                            <p class="project-title">Project Title</p>
+                            <p class="project-category">project-category</p>
+                        </div>
+                        <div class="project-description">
+                            a short description about the project.
+                        </div>
                         <div class="project-button-wrapper">
                             <a href="https://github.com/saintcheece" target="_blank">
                                 <div class="button-dark">
@@ -134,22 +182,27 @@
                     </div>
                 </div>
             </div>
-            <a href="https://github.com/saintcheece" target="_blank">
-                <div class="button-light">
-                    view more
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
-                    </svg>
-                </div>
-            </a>
+            <div class="project-button-wrapper">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=reecesantos33@gmail.com&su=SUBJECT&body=MESSAGE" target="_blank">
+                    <div class="button-light">
+                        view more
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                            <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            
         </section>
 
         <section id="me">
-            <a class="section-title">aboutMe
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
-                </svg>
-            </a>
+            <div>
+                <a class="section-title" href="#">aboutMe
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                    </svg>
+                </a>
+            </div>
             <div class="profile">
                 <div class="profile-image">
                     <img src="assets/images/asdadsadasdasd (4).png"/>
@@ -203,7 +256,7 @@
             <h2 class="section-title">education</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <p class="timeline-date">2020</p>
+                    <p class="timeline-date">2020 - 2022</p>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-title">Information Communication Technology</p>
@@ -212,7 +265,7 @@
                 </div>
 
                 <div class="timeline-item">
-                    <p class="timeline-date">2022</p>
+                    <p class="timeline-date">2022 - Present</p>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-title">Bachelor of Science in Information Technology with Specialization in Mobile and Web Development</p>
@@ -236,7 +289,7 @@
             <h2 class="section-title">experiences</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <p class="timeline-date">2023</p>
+                    <p class="timeline-date">2023 - 2024</p>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-title">Chief Creatives Officer</p>
@@ -244,7 +297,7 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <p class="timeline-date">2023</p>
+                    <p class="timeline-date">2023 - 2024</p>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-title">Creatives Officer</p>
@@ -252,7 +305,7 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <p class="timeline-date">2024</p>
+                    <p class="timeline-date">2024 - 2025</p>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-title">Chief Game Developer Officer</p>
@@ -265,6 +318,63 @@
                     <div class="timeline-content">
                         <p class="timeline-title">Freelance Mascot Designer</p>
                         <p class="timeline-subtitle">Igris Balteus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="me">
+            <div>
+                <a class="section-title" href="#">aboutMe
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                        <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="assets/images/asdadsadasdasd (4).png"/>
+                </div>
+                <div class="profile-meta">
+                    <p>a graduating mobile and web developer from NU Baliwag with a handful of experience in making designs and databases work.</p>
+                    <p>Also makes use of my hobby; working on creative digital content as freelance and for organizations.</p>
+                    <div class="profile-meta-socials">
+                        <!-- SOCIAL BUTTONS -->
+                         <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0 0 18 18">
+                                    <path d="M18 9.055C18 4.054 13.97 0 9.001 0 4.03.001 0 4.054 0 9.056 0 13.575 3.291 17.321 7.593 18v-6.327H5.309V9.056h2.286V7.06c0-2.27 1.344-3.522 3.4-3.522.985 0 2.014.176 2.014.176v2.228h-1.135c-1.117 0-1.466.698-1.466 1.415v1.698h2.495l-.398 2.617h-2.098v6.327C14.71 17.319 18 13.574 18 9.055Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0 0 18 18">
+                                    <path d="M0 1.29C0 .576.592 0 1.322 0h15.356C17.408 0 18 .577 18 1.29v15.42c0 .713-.592 1.29-1.322 1.29H1.322C.592 18 0 17.423 0 16.71V1.29Zm5.56 13.778V6.94h-2.7v8.128h2.7ZM4.21 5.83c.942 0 1.529-.623 1.529-1.404-.017-.798-.585-1.404-1.51-1.404S2.7 3.629 2.7 4.426c0 .78.586 1.404 1.493 1.404h.018Zm5.522 9.238v-4.54c0-.242.018-.485.09-.658.195-.485.64-.988 1.386-.988.978 0 1.368.745 1.368 1.838v4.348h2.701v-4.662c0-2.497-1.332-3.658-3.109-3.658-1.433 0-2.076.787-2.436 1.342v.028h-.018l.018-.028V6.94h-2.7c.034.763 0 8.128 0 8.128h2.7Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0 0 19 18">
+                                    <path d="M9.333 0C4.177 0 0 4.13 0 9.228c0 4.083 2.672 7.532 6.382 8.754.466.081.641-.196.641-.438 0-.22-.011-.946-.011-1.719-2.345.427-2.952-.565-3.139-1.084-.105-.265-.56-1.084-.956-1.303-.327-.173-.794-.6-.012-.612.735-.011 1.26.67 1.435.946.84 1.396 2.182 1.004 2.718.761.082-.6.327-1.003.595-1.234-2.076-.23-4.246-1.026-4.246-4.556a3.57 3.57 0 0 1 .956-2.48c-.093-.23-.42-1.176.094-2.445 0 0 .781-.242 2.566.946a8.754 8.754 0 0 1 2.334-.312 8.74 8.74 0 0 1 2.333.312c1.785-1.2 2.567-.946 2.567-.946.513 1.269.186 2.215.093 2.445.595.646.957 1.465.957 2.48 0 3.541-2.182 4.326-4.259 4.556.339.289.63.842.63 1.708 0 1.234-.011 2.226-.011 2.537 0 .242.175.53.641.438a9.338 9.338 0 0 0 4.605-3.365 9.169 9.169 0 0 0 1.754-5.39C18.667 4.13 14.49 0 9.333 0Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 18 12.64">
+                                    <path class="cls-1" d="M9.06,0h.1c.93,0,5.61.04,6.87.38.78.21,1.38.82,1.59,1.6.11.43.19.99.25,1.58v.12s.04.29.04.29v.12c.08,1.03.09,1.99.09,2.2v.09c0,.77-.04,1.55-.09,2.32v.12s-.02.12-.02.12c-.06.64-.14,1.28-.26,1.75-.21.78-.81,1.39-1.59,1.6-1.31.35-6.26.38-6.95.38h-.16c-.35,0-1.78,0-3.29-.06h-.19s-.1-.01-.1-.01h-.19s-.19-.02-.19-.02c-1.25-.06-2.44-.14-2.99-.29-.78-.21-1.38-.82-1.59-1.6-.12-.47-.21-1.11-.27-1.75v-.12s-.02-.12-.02-.12c-.06-.76-.09-1.53-.09-2.29v-.14c0-.24.01-1.08.07-2v-.12s.01-.06.01-.06v-.12s.03-.29.03-.29v-.12c.06-.58.14-1.15.26-1.58.21-.78.81-1.39,1.59-1.6.55-.15,1.74-.24,2.99-.29h.19s.19-.01.19-.01h.1s.19-.01.19-.01c1.07-.04,2.14-.05,3.21-.06,0,0,.22,0,.22,0ZM7.2,3.61v5.42l4.68-2.71-4.68-2.71h0Z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/saintcheece" target="_blank">
+                            <div class="social-button">
+                                <svg viewBox="0.5 94.187 511 323.626">
+                                    <path d="M206.729 238.87s48.358-3.59 48.358-60.297c0-56.711-39.563-84.387-89.678-84.387H.5v316.909h164.909s100.671 3.18 100.671-93.537c0 .001 4.389-78.688-59.351-78.688zm-53.19-88.357h11.87s22.416 0 22.416 32.973c0 32.969-13.183 37.749-28.136 37.749H73.161v-70.722h80.378zm7.21 204.257H73.161v-84.69h92.248s33.41-.438 33.41 43.522c0 37.068-24.954 40.888-38.07 41.168zm239.593-179.953c-121.873 0-121.765 121.766-121.765 121.766s-8.362 121.141 121.765 121.141c0 0 108.438 6.195 108.438-84.271h-55.768s1.86 34.068-50.81 34.068c0 0-55.777 3.738-55.777-55.135H510.64c0-.001 17.968-137.569-110.298-137.569zm-54.53 95.263s6.81-48.846 55.769-48.846c48.949 0 48.336 48.846 48.336 48.846H345.812zm117.096-118.199H332.159v-39.025h130.749v39.025z"/>
+                                </svg>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

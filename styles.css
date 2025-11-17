@@ -35,6 +35,21 @@ p{
     font-size: 1.5rem;
 }
 
+.link-left::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark);
+    transition: width 0.5s ease;
+}
+
+.link-left:hover::after {
+    width: 100%;
+}
+
 body{
     background-color: var(--primary);
 }
@@ -55,6 +70,10 @@ section{
         color: var(--primary);
         font-size: 4rem;
         font-weight: 900;
+        text-decoration: none;
+
+        display: inline-block;
+        position: relative;
     }
 
     .section-title svg{
@@ -62,14 +81,34 @@ section{
         height: 4rem;
     }
 
+    .section-title::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 7px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.5s ease;
+    }
+
+    .section-title:hover::after {
+        width: 100%;
+    }
+
     #container {
         position: fixed;
-        width: 80vh;
+        /* width: 80vh;
         height: 80vh;
-        transform: rotate(30deg);
         right: 2vw;
-        top: 2vh;
-        opacity: 0.5;
+        top: 2vh; */
+
+        right: -5vw;
+        top: -18vh;
+        width: 90vh;
+        height: 90vh;
+        transform: rotate(30deg);
+        /* opacity: 0.5; */
     }
 
     .square {
@@ -116,10 +155,14 @@ section{
                         color: var(--dark );
                         font-size: 1.3rem;
                         font-weight: 500;
+
+                        display: inline-block;
+                        position: relative;
                     }
 
-                    .navbar-link:hover{
-                        text-decoration: underline;
+                    .navbar-link svg{
+                        fill: var(--dark);
+                        height: 1rem;
                     }
             
             #header-photo{
@@ -163,6 +206,12 @@ section{
             .projects-list-item{
                 background-color: var(--primary);
                 width: 298px;
+                transition: transform 0.1s ease-out;
+            }
+
+            .projects-list-item:hover{
+                cursor: pointer;
+                transform: translateY(-5px);
             }
 
             .img-mock{
@@ -174,7 +223,7 @@ section{
             .project-meta{
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                /* justify-content: space-between; */
                 padding: 10px;
                 gap: .7rem;
             }
@@ -191,8 +240,18 @@ section{
                 }
 
                 .project-description{
+                    height: 3.75rem;
                     font-size: 1rem;
-                    color: var(--dark)
+                    color: var(--dark);
+                    line-height: 1.25rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; /* fits ~3.75rem at 1.25rem line-height */
+                    -webkit-box-orient: vertical;
+                    white-space: normal;
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
                 }
 
                 .project-button-wrapper{
@@ -210,6 +269,11 @@ section{
                     font-size: 1rem;
                     background-color: var(--dark);
                     margin: 0;
+                    transition: transform 0.1s ease-out;
+                }
+
+                .button-dark:hover{
+                    transform: scale(1.1);
                 }
 
                     .button-dark svg{
@@ -269,6 +333,7 @@ section{
                         color: var(--dark);
                         display: flex;
                         justify-content: center;
+                        transition: transform 0.1s ease-out;
                     }
 
                         .social-button svg{
@@ -277,18 +342,9 @@ section{
                         }
 
                         .social-button:hover{
-                            background-color: var(--semidark);
+                            /* background-color: var(--semidark); */
+                            transform: scale(1.1);
                         }
-
-        .timeline-dot {
-            position: absolute;
-            left: 78px;
-            top: 5px;
-            width: 26px;
-            height: 26px;
-            background: var(--primary);
-            border-radius: 50%;
-        }
 
         .timeline {
             position: relative;
@@ -298,13 +354,15 @@ section{
         .timeline-item {
             margin-bottom: 60px;
             position: relative;
-            padding-left: 150px;
+            padding-left: 210px;
+            display: flex;
+            align-items: flex-start;
         }
 
         .timeline-item:not(:last-child)::after {
             content: '';
             position: absolute;
-            left: 90px;
+            left: 190px;
             top: 31px;
             width: 3px;
             height: calc(100% + 60px);
@@ -315,15 +373,16 @@ section{
             position: absolute;
             left: 0;
             top: 0;
+            font-size: 1.5rem;
             color: var(--primary);
             font-weight: bold;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            width: 170px;
+            text-align: right;
         }
 
         .timeline-dot {
             position: absolute;
-            left: 78px;
+            left: 178px;
             top: 5px;
             width: 26px;
             height: 26px;
@@ -336,15 +395,14 @@ section{
         }
 
         .timeline-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            line-height: 1.3;
             font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--light);
         }
 
         .timeline-subtitle {
-            font-size: 1.2rem;
-            font-weight: normal;
+            font-size: 1rem;
+            color: var(--light);
         }
 
 
