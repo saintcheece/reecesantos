@@ -12,31 +12,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <title>reece santos</title>
+    
+    <!-- FAVICON / LOGO -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 
     <!-- FONT: MANROPE -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ADD LOGO LATER -->
+    <!-- <div class="logo-container">
+        <a href="#top" class="logo-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 112.02 112.02">
+                <g id="Layer_1-2" data-name="Layer 1">
+                    <g>
+                        <polygon points="57.5 85.89 57.5 107.51 2.5 107.51 2.5 2.5 107.5 2.5 107.5 57.5 85.83 57.5 108.51 80.94 80.94 108.52 57.5 85.89" style="fill: #171d27;"/>
+                        <path d="M105,5v50h-25.08l25.08,25.92-24.09,24.1-25.91-25.01v25H5V5h100M110,0H0v110.01h60v-18.23l17.44,16.83,3.53,3.41,3.47-3.47,24.09-24.1,3.48-3.48-3.42-3.53-16.88-17.44h18.28V0h0Z" style="fill: #e75d24;"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
+    </div> -->
+    <a class="to-top" onclick="scrollToTop();">
+        <div class="top-button">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 26.13 26.87">
+                <path d="M14.74,6.43v20.44s-3.36,0-3.36,0V6.43S2.37,15.44,2.37,15.44l-2.37-2.37L13.06,0l13.06,13.06-2.38,2.38L14.74,6.43Z"/>
+            </svg>
+        </div>
+    </a>
     <div class="section-head">
         <div class="section-head-content">
             <div class="navbar">
                 <div class="navbar-select">
                     <div class="navbar-select-button">
-                        <a class="navbar-link link-left" href="#projects">projects
+                        <a class="navbar-link link-left" onclick="jumpToSection('projects')">projects
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                                 <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
                             </svg>
                         </a>
                     </div>
                     <div class="navbar-select-button">
-                        <a class="navbar-link link-left" href="#me">aboutMe
+                        <a class="navbar-link link-left" onclick="jumpToSection('me')">aboutMe
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                                 <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
                             </svg>
                         </a>
                     </div>
                     <div class="navbar-select-button">
-                        <a class="navbar-link link-left" href="#contact">contacts
+                        <a class="navbar-link link-left" onclick="jumpToSection('contact')">contacts
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                                 <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
                             </svg>
@@ -297,7 +320,7 @@
 
         <section id="contact">
             <div>
-                <a class="section-title" href="#">contactMe
+                <a class="section-title" href="#">contacts
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                         <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
                     </svg>
@@ -308,7 +331,7 @@
                     oninput="this.style.height='auto'; this.style.height=(this.scrollHeight)+'px'"></textarea>
                 <br>
                 <div class="project-button-wrapper">
-                <button type="submit" class="button-light">
+                <button onclick="sendContactEmail(event)" class="button-light" >
                     send as email
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                         <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
@@ -354,38 +377,11 @@
                     </div>
                 </a>
             </div>
-            <script>
-                document.getElementById('contact-form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const textarea = document.getElementById('contact-email-body');
-                    const message = textarea.value || '';
-
-                    if (message.trim().length === 0) {
-                        // Shake animation using Web Animations API to indicate empty field
-                        textarea.animate([
-                            { transform: 'translateX(0)' },
-                            { transform: 'translateX(-8px)' },
-                            { transform: 'translateX(8px)' },
-                            { transform: 'translateX(-6px)' },
-                            { transform: 'translateX(6px)' },
-                            { transform: 'translateX(0)' }
-                        ], {
-                            duration: 500,
-                            easing: 'ease-in-out'
-                        });
-                        textarea.focus();
-                        return;
-                    }
-
-                    const encodedMessage = encodeURIComponent(message);
-                    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=reecesantos33@gmail.com&su=[WEB PORTFOLIO] Inquiry from Portfolio Website&body=${encodedMessage}`;
-                    window.open(mailtoLink, '_blank');
-                });
-            </script>
         </section>
     </div>
     <i class="section-body-footer">see 'ya, web surfer...</i>
     <script>
         vertigo("sq0"); // Start the animation
+        handleScrollToTop();
     </script>
 </body>
