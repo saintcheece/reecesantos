@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Reader</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Project Reader</h1>
+    </header>
+
+    <main id="content">
+        <!-- Loaded HTML will appear here -->
+    </main>
+
+    <script>
+        fetch("projects/sample-project.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("content").innerHTML = html;
+            })
+            .catch(err => console.error(err));
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Reece Santos</p>
+    </footer>
+</body>
+</html>

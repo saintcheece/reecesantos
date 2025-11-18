@@ -286,14 +286,21 @@ section{
                 padding: 0.5rem 1rem;
                 border-radius: 0px;
                 color: var(--dark);
-                font-size: 1rem;
-                font-weight: 600;
+                font-size: 1.2rem;
+                font-weight: bold;
                 background-color: var(--primary);
+                border: none;
+                cursor: pointer;
+                transition: transform 0.1s ease-out;
             }
+
+                .button-light:hover{
+                    transform: translateX(5px);
+                }
 
             .button-light svg{
                 fill: var(--dark);
-                height: .7rem;
+                height: 1rem;
             }
 
         .profile{
@@ -319,9 +326,16 @@ section{
                 justify-content:space-evenly;
             }
 
+                #greeting{
+                    font-size: 3rem;
+                    font-weight: bold;
+                    color: var(--light);
+                }
+
                 .profile-meta-socials{
                     display: flex;
                     flex-direction: row;
+                    /* justify-content: center; */
                     gap: 1rem;
                 }
 
@@ -346,9 +360,11 @@ section{
                             transform: scale(1.1);
                         }
 
-        .timeline {
-            position: relative;
-            padding-left: 0;
+        .timeline-type {
+            color: var(--primary);
+            font-size: 4rem;
+            font-weight: 900;
+            text-decoration: none;
         }
 
         .timeline-item {
@@ -400,10 +416,68 @@ section{
             color: var(--light);
         }
 
+        .timeline-title-link {
+            display: inline-block;
+            position: relative;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            color: var(--light);
+        }
+
+            .timeline-title-link svg {
+                fill: var(--light);
+                height: 1.25rem;
+            }
+
+            .timeline-title-link::after{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 3px;
+                bottom: 0;
+                left: 0;
+                background-color: var(--light);
+                transition: width 0.5s ease;
+            }
+
+            .timeline-title-link:hover::after {
+                width: 100%;
+            }
+
         .timeline-subtitle {
             font-size: 1rem;
             color: var(--light);
         }
+
+        .timeline-subtitle-link {
+            display: inline-block;
+            position: relative;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            color: var(--light);
+        }
+
+            .timeline-subtitle-link svg {
+                fill: var(--light);
+                height: 0.75rem;
+            }
+
+            .timeline-subtitle-link::after{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: var(--light);
+                transition: width 0.5s ease;
+            }
+
+            .timeline-subtitle-link:hover::after {
+                width: 100%;
+            }
 
 
         #section-body-skills{
@@ -578,3 +652,20 @@ section{
             color: var(--dark);
             font-weight: 700;
         }               
+
+            #contact-email-body{
+                background-color: var(--dark);
+                color: var(--light);
+                font-size: 1.5rem;
+                padding: 0.5rem;
+                /* keep only the sides you want */
+                border-top: none;
+                border-right: none;
+                border-left: 4px solid var(--primary);
+                border-bottom: 4px solid var(--primary);
+                border-radius: 0;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none; /* optional: remove default focus outline */
+                resize: none;
+            }
