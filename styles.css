@@ -278,6 +278,10 @@ section{
         /* background-color: red;   */
     }
 
+        .project-title{
+            line-height: 1.8rem;
+        }
+
         .projects-list{
             display: grid;
             gap: 10px;

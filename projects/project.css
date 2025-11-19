@@ -46,7 +46,13 @@ h3{
 
 p{
     font-size: 1.5rem;
+    line-height: 2.1rem;
 }
+
+/* iframe{
+    width: 914px;
+    height: 514.125px;
+} */
 
 ul {
   list-style: none;       /* remove default bullets */
