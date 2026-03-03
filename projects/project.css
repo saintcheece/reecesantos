@@ -131,6 +131,8 @@ body{
     background-color: var(--dark);
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
     main{
@@ -197,4 +199,16 @@ section{
     justify-content: center;
     height: 100vh;
     gap: 20px;
+}
+
+.section-body-footer{
+    display: flex;
+    flex-direction: column;
+    align-items:last baseline;
+    background-color: var(--primary);
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--dark);
+    font-weight: 700;
 }
