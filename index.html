@@ -165,14 +165,85 @@
                     </div>
                 </div>
             </div>
-            <div class="project-button-wrapper">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=reecesantos33@gmail.com&su=SUBJECT&body=MESSAGE" target="_blank">
-                    <div class="button-light">
-                        view more
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                            <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
-                        </svg>
+
+            <div class="projects-drawer" id="projects-drawer">
+                <div class="projects-drawer-inner">
+
+                <div class="projects-list-item">
+                    <img class="img-mock" src="assets/images/thumbnail-placeholder.png"/>
+                    <div class="project-meta">
+                    <div class="project-header">
+                        <p class="project-title">Ticketing System from the Ground Up</p>
+                        <p class="project-category">development</p>
                     </div>
+                    <div class="project-description">
+                        A ticketing system built from the ground up. Yes, even the framework.
+                    </div>
+                    <div class="project-button-wrapper">
+                        <a href="#">
+                        <div class="button-dark">view
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                            <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                            </svg>
+                        </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                <div class="projects-list-item">
+                    <img class="img-mock" src="assets/images/thumbnail-placeholder.png"/>
+                    <div class="project-meta">
+                    <div class="project-header">
+                        <p class="project-title">Google + NU Baliwag</p>
+                        <p class="project-category">design</p>
+                    </div>
+                    <div class="project-description">
+                        Short description of the project goes here.
+                    </div>
+                    <div class="project-button-wrapper">
+                        <a href="#">
+                        <div class="button-dark">view
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                            <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                            </svg>
+                        </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                <div class="projects-list-item">
+                    <img class="img-mock" src="assets/images/thumbnail-placeholder.png"/>
+                    <div class="project-meta">
+                    <div class="project-header">
+                        <p class="project-title">In the Clouds</p>
+                        <p class="project-category">design</p>
+                    </div>
+                    <div class="project-description">
+                        Helping design and debut an organization's mascot.
+                    </div>
+                    <div class="project-button-wrapper">
+                        <a href="#">
+                        <div class="button-dark">view
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                            <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z"/>
+                            </svg>
+                        </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+            <div class="project-button-wrapper">
+                <a id="projects-toggle" href="#">
+                <div class="button-light">
+                    view more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                    <path d="M8 3v5H3v3h5v5h3v-5h5V8h-5V3Z"/>
+                    </svg>
+                </div>
                 </a>
             </div>
             
@@ -387,19 +458,43 @@
                         </svg>
                     </div>
                 </a>
-                <a href="https://www.behance.net/reecesantos" target="_blank">
+                <!-- <a href="https://www.behance.net/reecesantos" target="_blank">
                     <div class="social-button">
                         <svg viewBox="0.5 94.187 511 323.626">
                             <path d="M206.729 238.87s48.358-3.59 48.358-60.297c0-56.711-39.563-84.387-89.678-84.387H.5v316.909h164.909s100.671 3.18 100.671-93.537c0 .001 4.389-78.688-59.351-78.688zm-53.19-88.357h11.87s22.416 0 22.416 32.973c0 32.969-13.183 37.749-28.136 37.749H73.161v-70.722h80.378zm7.21 204.257H73.161v-84.69h92.248s33.41-.438 33.41 43.522c0 37.068-24.954 40.888-38.07 41.168zm239.593-179.953c-121.873 0-121.765 121.766-121.765 121.766s-8.362 121.141 121.765 121.141c0 0 108.438 6.195 108.438-84.271h-55.768s1.86 34.068-50.81 34.068c0 0-55.777 3.738-55.777-55.135H510.64c0-.001 17.968-137.569-110.298-137.569zm-54.53 95.263s6.81-48.846 55.769-48.846c48.949 0 48.336 48.846 48.336 48.846H345.812zm117.096-118.199H332.159v-39.025h130.749v39.025z"/>
                         </svg>
                     </div>
-                </a>
+                </a> -->
             </div>
         </section>
     </div>
-    <i class="section-body-footer">see 'ya, web surfer...</i>
     <script>
         vertigo("sq0"); // Start the animation
         handleScrollToTop();
     </script>
 </body>
+<footer>
+    see 'ya, web surfer...
+</footer>
+
+
+<script>
+  (function () {
+    const SVG_PLUS  = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><path d="M8 3v5H3v3h5v5h3v-5h5V8h-5V3Z"/></svg>`;
+    const SVG_MINUS = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><path d="M3 8h13v3H3z"/></svg>`;
+
+    let expanded = false;
+    const toggle = document.getElementById("projects-toggle");
+    const inner  = toggle.querySelector(".button-light");
+    const drawer = document.getElementById("projects-drawer");
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      expanded = !expanded;
+      drawer.classList.toggle("open", expanded);
+      inner.innerHTML = expanded ? `view less ${SVG_MINUS}` : `view more ${SVG_PLUS}`;
+    });
+  })();
+</script>
+
+</html>
