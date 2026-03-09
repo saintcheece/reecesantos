@@ -78,6 +78,34 @@ p{
     transition: width 0.5s ease;
 }
 
+/* Underline animation */
+.inline-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px; /* underline thickness */
+    width: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.inline-link:hover::before {
+    width: 100%; /* animate underline */
+}
+
+/* Arrow icon */
+.inline-link::after {
+    content: url("assets/images/arrow.svg");
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-top: -1rem;
+    /* margin-left: -0.25rem; */
+    margin-right: 0.25rem;
+    vertical-align: middle;
+}
+
 .link-left:hover::after {
     width: 100%;
 }
@@ -113,6 +141,16 @@ p{
 
 body{
     background-color: var(--primary);
+}
+
+.inline-link {
+    color: var(--primary);
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
 }
 
 section{
@@ -226,7 +264,8 @@ section{
                 .navbar-select{
                     display: flex;
                     justify-content: space-between;
-                    width: 40%;
+                    width: 43%;
+                    /* align-items: center; */
                     /* background-color: yellow; */
                 }
 
@@ -324,7 +363,7 @@ section{
                 }
 
                 .project-category{
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     color: var(--dark)
                 }
 

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igris Balteus</title>
+    <link rel="stylesheet" href="../project.css">
+    <link rel="icon" type="image/png" href="../../assets/images/logo.png">
+    <script src = "../project.js"></script>
+
+    <!-- LINK FONT ONLINE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- FONT: MANROPE -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="">
+        <header>
+            <button type="button" class="back-button" onclick="smartBack();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.9 -2.9 25 25">
+                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z" transform="rotate(-135 9.5 9.5)"/>
+                </svg>
+            </button>
+            <div class="meta">
+                <h4>December 04, 2025 \ 04:11:42</h4>
+                <h1>Building a System from the Ground Up</h1>
+                <h3>a purpose-built ticketing system I independently built from the framework up during my internship</h3>
+                <div class="categories">
+                    <a class="category inline-link">
+                        development
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section id="">
+            <h2>The Task Brief</h2>
+            <p>Right on my first day, my mentor at the time, Sir Robert Matoguinas gave me a brief of the tasks I’d be doing throughout my 400 hours in the company. One of which is the development of a ticketing system the company could put to use.</p>
+        </section>
+
+        <section id="">
+            <p>The goal was to develop a ticketing system purposely made for their ticketing process some of the notable features include:</p>
+            <ul>
+                <li>Real-time conversation visibility for all IT Department staff with admin intervention capabilities</li>
+                <li>Role-based ticket assignment and re-assignment</li>
+                <li>A specific query expiration system</li>
+                <li>Email notifications</li>
+            </ul>
+            <p>He also emphasized developing it using “Native PHP”, which he clarified to not use frameworks such as Laravel or Symfony.</p>
+        </section>
+
+        <section id="">
+            <h2>Learning Grounds</h2>
+            <p>The first two weeks are focused on building the foundation of the system, this involves planning the database structure, flow, and most prominently the technology to be used. See, without frameworks, I need to enforce my own rules in designing the system from the file structure to routing. So, to achieve this, I had to take a closer look on existing frameworks and completely re-learn my understanding of how the server and clients interact.</p>
+        </section>
+
+        <section id="">
+            <p>
+                The MVC structure is a good start for file management. It’s a universally accepted design pattern that even Laravel uses. For routing, I based my code on a simple public routing library called “phprouter” that I modified to support accounts.
+            </p>
+        </section>
+
+        <section id="">
+            <p>Understanding the client-server interaction did not stop there however, as I got further insights in the middle of the development. Throughout the development, I’ve discovered:</p>
+            <ul>
+                <li>Task Scheduling</li>
+                <li>Websockets</li>
+                <li>Webhooks</li>
+            </ul>
+            <p>See, developing with a higher level of technologies, I’ve been missing on different aspects of system design that could further improve my system designs in the future. So developing my own simple framework was a very enriching experience.</p>
+        </section>
+
+        <section id="">
+            <h2>Post-Development</h2>
+            <p>On February 4, 2026, I presented the completed system to the IT Department staff. I gave a thorough walkthrough — including a deep dive into the custom framework I built from the ground up — and walked away with an approval on the first presentation.</p>
+        </section>
+
+        <section id="">
+            <p>
+                There were notes on the interface that could be improved and documentation still being in its early draft, both understandable given the system was independently developed over three months. The achievement I'm most proud of, however, isn't the system itself — it's everything I had to learn, build, and figure out on my own to get there.
+            </p>
+        </section>
+        
+    </main>
+</body>
+<footer>
+    <div class="footer-content">
+        see 'ya, web surfer...
+    </div>
+</footer>
+
+<script>
+  (function () {
+    var track = document.getElementById('carousel-track');
+    var originals = Array.from(track.children);
+    originals.forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  })();
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igris Balteus</title>
+    <link rel="stylesheet" href="../project.css">
+    <link rel="icon" type="image/png" href="../../assets/images/logo.png">
+    <script src = "../project.js"></script>
+
+    <!-- LINK FONT ONLINE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- FONT: MANROPE -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="">
+        <header>
+            <button type="button" class="back-button" onclick="smartBack();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.9 -2.9 25 25">
+                    <path d="M15.845 5.396 2.24 19.002.005 16.767 13.608 3.16H1.618V0h17.388v17.388h-3.161V5.396Z" transform="rotate(-135 9.5 9.5)"/>
+                </svg>
+            </button>
+            <div class="meta">
+                <h4>December 04, 2025 \ 04:11:42</h4>
+                <h1>Connecting Buyers With Shoppers Abroad</h1>
+                <h3>our thesis project; a platform that connects users with providers who can purchase and deliver abroad</h3>
+                <div class="categories">
+                    <a class="category inline-link">
+                        development
+                    </a>
+                </div>
+            </div>
+        </header>
+    </main>
+</body>
+<footer>
+    <div class="footer-content">
+        see 'ya, web surfer...
+    </div>
+</footer>
+
+<script>
+  (function () {
+    var track = document.getElementById('carousel-track');
+    var originals = Array.from(track.children);
+    originals.forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  })();
+</script>
+</html>

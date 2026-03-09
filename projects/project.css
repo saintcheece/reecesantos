@@ -146,6 +146,7 @@ body{
             flex-direction: column;
             height: 80vh;
             gap: 30px;
+            width: 914px;
         }
 
             .meta{
@@ -196,7 +197,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     gap: 20px;
     width: 914px;
 }
