@@ -1,0 +1,51 @@
+/* Animated underline link. One component replaces the five copies of this
+   effect in the old stylesheet (.link-left, .inline-link, .section-title,
+   .timeline-title-link, .timeline-subtitle-link).
+   Kept in the `components` layer so Tailwind utilities passed via className still win. */
+@layer components {
+  .animated-link {
+    --link-color: var(--color-primary);
+    position: relative;
+    display: inline-block; /* text wraps naturally and the arrow stays with the last word */
+    color: var(--link-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .animated-link[data-tone="dark"] {
+    --link-color: var(--color-dark);
+  }
+  .animated-link[data-tone="light"] {
+    --link-color: var(--color-light);
+  }
+
+  .animated-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: var(--underline-height, 2px);
+    background-color: currentColor;
+    transition: width var(--underline-duration, 300ms) ease;
+  }
+
+  .animated-link:hover::after,
+  .animated-link:focus-visible::after {
+    width: 100%;
+  }
+
+  .animated-link__icon {
+    display: inline-block;
+    width: auto;
+    height: var(--icon-size, 1em);
+    margin-left: 0.25rem;
+    vertical-align: middle;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animated-link::after {
+      transition: none;
+    }
+  }
+}
