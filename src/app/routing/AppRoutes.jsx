@@ -1,7 +1,9 @@
 import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { ErrorsPage } from "../pages/errors/ErrorsPage";
+import Overview from "../pages/Overview";
 import Layout from "../pages/layout/Layout";
-import { PROJECTS } from "../constants/routes";
+import { Suspense } from "react";
+import { PROJECTS } from "../constants/constants";
 
 const LayoutWrapper = ({children, currentPageName}) =>
     Layout ? (
@@ -10,18 +12,36 @@ const LayoutWrapper = ({children, currentPageName}) =>
         <>{children}</> 
     );
 
+const SuspensedView = ({ children }) => {
+  return <Suspense fallback={<Loader />}>{children}</Suspense>;
+};
+
+
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="error/*" element={<ErrorsPage />} />
-            <Route path="overview" element={<OverviewPage />} />
-            <Route path="projects" element={
-                <LayoutWrapper>
-                    <SuspensedView>
-                        <Outlet/>
-                    </SuspensedView>
-                </LayoutWrapper>
-            }>
+            <Route 
+                path="error/*"
+                element={<ErrorsPage />}
+            />
+            <Route 
+                path=""
+                element={
+                    <LayoutWrapper>
+                        <Overview />
+                    </LayoutWrapper>
+                }
+            />
+            <Route
+                path="projects"
+                element={
+                    <LayoutWrapper>
+                        <SuspensedView>
+                            <Outlet/>
+                        </SuspensedView>
+                    </LayoutWrapper>
+                }
+            >
                 {PROJECTS.map(project => (
                     <Route 
                         key={project.url}

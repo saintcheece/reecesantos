@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import notFoundImage from "/notfound.svg";
+// import notFoundImage from "/notfound.svg";
 
 const Error404 = () => {
   return (

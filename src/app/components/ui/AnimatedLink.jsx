@@ -1,5 +1,5 @@
 import "./AnimatedLink.css";
-import { cn } from "../../lib/cn";
+import { cn } from "../../lib/cn"
 import { ArrowIcon } from "../icons/Icons";
 
 /**

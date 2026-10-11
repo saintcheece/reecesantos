@@ -19,3 +19,18 @@ export const PROJECTS = [
         page: "ai-microtools"
     }
 ]
+
+export const NAVIGATION_LINKS = [
+    {
+        label: "projects",
+        href: "projects"
+    },
+    {
+        label: "about me",
+        href: "about-me"
+    },
+    {
+        label: "contacts",
+        href: "contacts"
+    }
+]
