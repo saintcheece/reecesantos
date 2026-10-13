@@ -3,7 +3,7 @@ import { ErrorsPage } from "../pages/errors/ErrorsPage";
 import Overview from "../pages/Overview";
 import Layout from "../pages/layout/Layout";
 import { Suspense } from "react";
-import { PROJECTS } from "../constants/constants";
+import { PROJECTS } from "../../data/projects";
 
 const LayoutWrapper = ({children, currentPageName}) =>
     Layout ? (
@@ -19,6 +19,8 @@ const SuspensedView = ({ children }) => {
 
 const AppRoutes = () => {
     return (
+
+        
         <Routes>
             <Route 
                 path="error/*"
