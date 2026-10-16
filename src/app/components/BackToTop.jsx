@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "../../lib/cn";
+import { scrollToY } from "../../lib/smoothScroll";
 import { UpArrowIcon } from "../icons/Icons";
 
 const SHOW_AFTER = 0.2; // fraction of the viewport height scrolled before the button appears
@@ -29,7 +30,7 @@ export default function BackToTop() {
     setVisible(false);
     clearTimeout(timer.current);
     timer.current = setTimeout(() => (suppressed.current = false), 1500); // safety net
-    window.scrollTo({ top: 0 }); // smooth via CSS scroll-behavior (skipped for reduced motion)
+    scrollToY(0);
   };
 
   return (

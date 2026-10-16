@@ -1,16 +1,19 @@
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { PROJECTS } from "../../data/projects";
 import { EDUCATION, CERTIFICATIONS, EXPERIENCES, CONTACTS, SOCIALS } from "../../data/profile";
 import { asset } from "../lib/asset";
 import { cn } from "../lib/cn";
-import Vertigo from "../components/Vertigo";
+import { smoothAnchors } from "../lib/smoothScroll";
+import { typingDuration } from "../lib/Typewriter";
+import Vertigo from "../components/effects/Vertigo";
 import { ArrowIcon } from "../components/icons/Icons";
 import Navbar from "../components/layout/Navbar";
 import Section from "../components/layout/Section";
 import SectionTitle from "../components/layout/SectionTitle";
 import AnimatedLink from "../components/ui/AnimatedLink";
 import Button from "../components/ui/Button";
+import TypeText from "../components/ui/TypeText";
 import SocialButton from "../components/ui/SocialButton";
 import Timeline from "../components/ui/Timeline/Timeline";
 
@@ -21,6 +24,15 @@ const NAV_LINKS = [
   { label: "aboutMe", href: "#me" },
   { label: "contacts", href: "#contact" },
 ];
+
+// hero typing sequence: title, then subtitle, then the navbar labels
+const TITLE = "reece santos";
+const SUBTITLE = "development / graphic design";
+const TITLE_SPEED = 70;
+const SUBTITLE_SPEED = 35;
+const TITLE_DELAY = 400;
+const SUBTITLE_DELAY = TITLE_DELAY + typingDuration(TITLE, TITLE_SPEED) + 150;
+const NAV_DELAY = SUBTITLE_DELAY + typingDuration(SUBTITLE, SUBTITLE_SPEED) + 150;
 
 const GRID_CLASS = "grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3";
 
@@ -70,6 +82,9 @@ export default function Overview() {
   const [open, setOpen] = useState(false);
   const drawerId = useId();
 
+  // every <a href="#..."> on the page (navbar, drawer, section titles) scrolls with our own animation
+  useEffect(() => smoothAnchors(), []);
+
   const featured = PROJECTS.slice(0, ALWAYS_VISIBLE);
   const more = PROJECTS.slice(ALWAYS_VISIBLE);
 
@@ -101,21 +116,49 @@ export default function Overview() {
 
   return (
     <>
-      <Navbar links={NAV_LINKS} contentRef={mainRef} />
+      <Navbar links={NAV_LINKS} contentRef={mainRef} typingDelay={NAV_DELAY} />
 
       {/* HERO */}
       <header id="top" className="fixed inset-0 -z-10 flex justify-center overflow-hidden">
         <Vertigo />
         <div className="relative flex w-full max-w-[calc(914px+2.5rem)] flex-col px-5">
           {/* the bar is out of the flow now, so this offset keeps the title where it was */}
-          <div className="mt-[20vh] flex h-[59.5vh] flex-col justify-end">
-            <h1 className="text-5xl leading-[1.2] font-black text-dark sm:text-7xl md:text-[5rem]">reece santos</h1>
-            <p className="text-xl text-dark sm:text-[2rem]">development / graphic design</p>
+          <div className="mt-[20svh] flex h-[59.5svh] flex-col justify-end">
+            <div className="relative w-fit max-w-full">
+              {/* Orange scrim: above the squares, below the text. Its colour matches the page, so it is
+                  invisible until a dark square drifts behind the title, then it softly hides it.
+                  Two linear gradients (left-right and top-bottom) are intersected as a mask, so the
+                  edges fade out evenly on every side. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-x-14 -inset-y-12 bg-primary"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(to right, transparent, #000 3.5rem, #000 calc(100% - 3.5rem), transparent), linear-gradient(to bottom, transparent, #000 3rem, #000 calc(100% - 3rem), transparent)",
+                  maskImage:
+                    "linear-gradient(to right, transparent, #000 3.5rem, #000 calc(100% - 3.5rem), transparent), linear-gradient(to bottom, transparent, #000 3rem, #000 calc(100% - 3rem), transparent)",
+                  WebkitMaskComposite: "source-in",
+                  maskComposite: "intersect",
+                }}
+              />
+              <h1 className="relative text-5xl leading-[1.2] font-black text-dark sm:text-7xl md:text-[5rem]">
+                <TypeText text={TITLE} delay={TITLE_DELAY} speed={TITLE_SPEED} lingerMs={0} />
+              </h1>
+              <p className="relative text-xl text-dark sm:text-[2rem]">
+                <TypeText text={SUBTITLE} delay={SUBTITLE_DELAY} speed={SUBTITLE_SPEED} />
+              </p>
+            </div>
           </div>
         </div>
       </header>
 
-      <main ref={mainRef} className="relative z-10 mt-[90vh] flex flex-col items-center bg-dark">
+      {/* --peek: how much of the dark page shows under the hero (3.5-6rem). Measured from the bottom of the
+          *small* viewport, so phone browser toolbars can't hide it. */}
+      <main
+        ref={mainRef}
+        style={{ "--peek": "clamp(3.5rem, 10svh, 6rem)" }}
+        className="relative z-10 mt-[calc(100svh-var(--peek))] flex flex-col items-center bg-dark"
+      >
         {/* PROJECTS */}
         <Section id="projects">
           <SectionTitle href="#projects">projects</SectionTitle>
