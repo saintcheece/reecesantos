@@ -42,10 +42,4 @@
     margin-left: 0.25rem;
     vertical-align: middle;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animated-link::after {
-      transition: none;
-    }
-  }
 }
