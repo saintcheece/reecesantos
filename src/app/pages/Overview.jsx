@@ -6,7 +6,7 @@ import { asset } from "../lib/asset";
 import { cn } from "../lib/cn";
 import { smoothAnchors } from "../lib/smoothScroll";
 import { typingDuration } from "../lib/Typewriter";
-import Vertigo from "../components/effects/Vertigo";
+import Vertigo from "../components/Vertigo";
 import { ArrowIcon } from "../components/icons/Icons";
 import Navbar from "../components/layout/Navbar";
 import Section from "../components/layout/Section";
@@ -121,26 +121,10 @@ export default function Overview() {
       {/* HERO */}
       <header id="top" className="fixed inset-0 -z-10 flex justify-center overflow-hidden">
         <Vertigo />
-        <div className="relative flex w-full max-w-[calc(914px+2.5rem)] flex-col px-5">
+        <div className="relative flex w-full max-w-[calc(914px+2.5rem)] flex-col px-5 z-10">
           {/* the bar is out of the flow now, so this offset keeps the title where it was */}
           <div className="mt-[20svh] flex h-[59.5svh] flex-col justify-end">
             <div className="relative w-fit max-w-full">
-              {/* Orange scrim: above the squares, below the text. Its colour matches the page, so it is
-                  invisible until a dark square drifts behind the title, then it softly hides it.
-                  Two linear gradients (left-right and top-bottom) are intersected as a mask, so the
-                  edges fade out evenly on every side. */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -inset-x-14 -inset-y-12 bg-primary"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(to right, transparent, #000 3.5rem, #000 calc(100% - 3.5rem), transparent), linear-gradient(to bottom, transparent, #000 3rem, #000 calc(100% - 3rem), transparent)",
-                  maskImage:
-                    "linear-gradient(to right, transparent, #000 3.5rem, #000 calc(100% - 3.5rem), transparent), linear-gradient(to bottom, transparent, #000 3rem, #000 calc(100% - 3rem), transparent)",
-                  WebkitMaskComposite: "source-in",
-                  maskComposite: "intersect",
-                }}
-              />
               <h1 className="relative text-5xl leading-[1.2] font-black text-dark sm:text-7xl md:text-[5rem]">
                 <TypeText text={TITLE} delay={TITLE_DELAY} speed={TITLE_SPEED} lingerMs={0} />
               </h1>
@@ -151,9 +135,6 @@ export default function Overview() {
           </div>
         </div>
       </header>
-
-      {/* --peek: how much of the dark page shows under the hero (3.5-6rem). Measured from the bottom of the
-          *small* viewport, so phone browser toolbars can't hide it. */}
       <main
         ref={mainRef}
         style={{ "--peek": "clamp(3.5rem, 10svh, 6rem)" }}
