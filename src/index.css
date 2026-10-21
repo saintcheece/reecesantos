@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Design tokens. `static` keeps every variable in the output so the
+   component CSS files can use var(--color-*) directly. */
+@theme static {
+  --color-primary: #f15d22;
+  --color-dark: #181d27;
+  --color-light: #f0d8c0;
+  --color-semidark: #843d25;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    /* anchor links (#projects, #me, ...) and scrollTo() animate unless the OS asks for less motion */
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-family: var(--font-sans);
+  }
+
+  /* hidden scrollbar, as in the original design */
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}

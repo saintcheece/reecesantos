@@ -1,0 +1,74 @@
+/* Timeline structure: dot + connector line. Mobile-first; the original
+   fixed-pixel desktop layout kicks in at 640px. */
+@layer components {
+  .timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    padding-left: 2.25rem;
+  }
+
+  /* the gap below an item belongs between items, not after the last one (keeps the section balanced) */
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-date {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .timeline-dot {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  /* connector from this dot down to the next one */
+  .timeline-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 8.5px;
+    width: 3px;
+    height: calc(100% + 60px);
+    background-color: var(--color-primary);
+  }
+
+  @media (min-width: 640px) {
+    .timeline-item {
+      flex-direction: row;
+      align-items: flex-start;
+      padding-left: 210px;
+    }
+
+    .timeline-date {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 170px;
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: right;
+    }
+
+    .timeline-dot {
+      top: 5px;
+      left: 178px;
+      width: 26px;
+      height: 26px;
+    }
+
+    .timeline-item:not(:last-child)::after {
+      top: 31px;
+      left: 190px;
+    }
+  }
+}

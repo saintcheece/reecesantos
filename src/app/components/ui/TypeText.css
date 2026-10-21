@@ -1,0 +1,30 @@
+/* Blinking caret for TypeText. Zero width, so it can never push a line to wrap. */
+@layer components {
+  .type-caret {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    vertical-align: -0.1em;
+  }
+
+  .type-caret::after {
+    content: "";
+    position: absolute;
+    top: 0.05em;
+    bottom: 0.05em;
+    left: 0.06em;
+    width: 0.09em;
+    background-color: currentColor;
+  }
+
+  .type-caret--blink {
+    animation: type-caret-blink 0.9s steps(1) infinite;
+  }
+}
+
+@keyframes type-caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
