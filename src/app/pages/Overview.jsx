@@ -195,7 +195,7 @@ export default function Overview() {
           <div className="flex flex-col gap-4 md:flex-row">
             <div className="aspect-square w-full max-w-[300px] shrink-0 bg-primary">
               <img
-                src={asset("assets/images/asdadsadasdasd (4).png")}
+                src={asset("assets/images/me.png")}
                 alt="Portrait of Reece Santos"
                 className="size-full object-cover"
               />

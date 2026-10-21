@@ -39,7 +39,8 @@
     display: inline-block;
     width: auto;
     height: var(--icon-size, 1em);
-    margin-left: 0.25rem;
+    margin-left: .25em;
+    margin-top: -.25em;
     vertical-align: middle;
   }
 }
