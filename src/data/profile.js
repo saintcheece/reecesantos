@@ -1,5 +1,3 @@
-import { FacebookIcon, LinkedInIcon, GitHubIcon, YouTubeIcon } from "../app/components/icons/Icons";
-
 export const CERTIFICATIONS = [
     { 
         date: "2023",
@@ -10,21 +8,6 @@ export const CERTIFICATIONS = [
 ]
 
 export const EDUCATION = [
-    { 
-        date: "2019-2022",
-        title: "Information Communication and Technology", 
-        subtitle: "Aguinaldo J. Santos National Highschool",
-        subtitleHref: "https://www.facebook.com/DepEdTayoAJSNHS" 
-    },
-    { 
-        date: "2022-2026",
-        title: "Bachelor of Science in Information Technology", 
-        subtitle: "NU Baliwag",
-        subtitleHref: "https://onlineapp.nu-baliwag.edu.ph/portal/services.php" 
-    }
-]
-
-export const EXPERIENCES = [
     { 
         date: "2023-2024",
         title: "Chief Creatives Officer", 
@@ -55,6 +38,16 @@ export const EXPERIENCES = [
     }
 ]
 
+export const EXPERIENCES = [
+    { 
+        date: "2020-2021",
+        title: "Web Developer",
+        titleHref: "#", 
+        subtitle: "Company Name",
+        subtitleHref: "#" 
+    }
+]
+
 export const CONTACTS = [
     { 
         date: "2020-2021",
@@ -64,6 +57,20 @@ export const CONTACTS = [
         subtitleHref: "#" 
     }
 ]
+/** Square orange icon link. `icon` is a component from Icons.jsx. */
+export default function SocialButton({ href, label, icon: Icon }) {
+  return (
+    <a
+      href={href}
+      aria-label={label}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="grid size-18 place-items-center bg-primary text-dark transition-transform duration-100 ease-out hover:scale-110"
+    >
+      <Icon className="h-auto w-12" />
+    </a>
+  );
+}
 
 export const SOCIALS = [
     { 

@@ -37,7 +37,7 @@
 
   .animated-link__icon {
     display: inline-block;
-    width: .75em;
+    width: auto;
     height: var(--icon-size, 1em);
     margin-left: .25em;
     margin-top: -.25em;
