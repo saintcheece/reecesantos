@@ -34,7 +34,7 @@ const TITLE_DELAY = 400;
 const SUBTITLE_DELAY = TITLE_DELAY + typingDuration(TITLE, TITLE_SPEED) + 150;
 const NAV_DELAY = SUBTITLE_DELAY + typingDuration(SUBTITLE, SUBTITLE_SPEED) + 150;
 
-const GRID_CLASS = "grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3";
+const GRID_CLASS = "grid grid-cols-1 gap-2.5 sm:grid-cols-3 lg:grid-cols-3";
 
 function shake(el) {
   el.animate(
@@ -195,7 +195,7 @@ export default function Overview() {
           <div className="flex flex-col gap-4 md:flex-row">
             <div className="aspect-square w-full max-w-[300px] shrink-0 bg-primary">
               <img
-                src={asset("assets/images/asdadsadasdasd (4).png")}
+                src={asset("assets/images/me.png")}
                 alt="Portrait of Reece Santos"
                 className="size-full object-cover"
               />

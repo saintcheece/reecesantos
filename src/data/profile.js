@@ -1,3 +1,5 @@
+import { FacebookIcon, LinkedInIcon, GitHubIcon, YouTubeIcon } from "../app/components/icons/Icons";
+
 export const CERTIFICATIONS = [
     { 
         date: "2023",
@@ -8,6 +10,21 @@ export const CERTIFICATIONS = [
 ]
 
 export const EDUCATION = [
+    { 
+        date: "2019-2022",
+        title: "Information Communication and Technology", 
+        subtitle: "Aguinaldo J. Santos National Highschool",
+        subtitleHref: "https://www.facebook.com/DepEdTayoAJSNHS" 
+    },
+    { 
+        date: "2022-2026",
+        title: "Bachelor of Science in Information Technology", 
+        subtitle: "NU Baliwag",
+        subtitleHref: "https://onlineapp.nu-baliwag.edu.ph/portal/services.php" 
+    }
+]
+
+export const EXPERIENCES = [
     { 
         date: "2023-2024",
         title: "Chief Creatives Officer", 
@@ -38,16 +55,6 @@ export const EDUCATION = [
     }
 ]
 
-export const EXPERIENCES = [
-    { 
-        date: "2020-2021",
-        title: "Web Developer",
-        titleHref: "#", 
-        subtitle: "Company Name",
-        subtitleHref: "#" 
-    }
-]
-
 export const CONTACTS = [
     { 
         date: "2020-2021",
@@ -60,8 +67,23 @@ export const CONTACTS = [
 
 export const SOCIALS = [
     { 
+        label: "Facebook",
+        href: "",
+        icon: FacebookIcon
+    },
+    { 
+        label: "LinkedIn",
+        href: "",
+        icon: LinkedInIcon
+    },
+    { 
         label: "GitHub",
         href: "",
-        icon: "GitHubIcon"
-    }
+        icon: GitHubIcon
+    },
+    { 
+        label: "YouTube",
+        href: "",
+        icon: YouTubeIcon
+    },
 ]

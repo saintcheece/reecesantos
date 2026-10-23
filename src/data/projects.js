@@ -1,23 +1,44 @@
 export const PROJECTS = [
     {
-        title: "Project 1",
-        thumbnail: "/images/project1.jpg",
-        categories: ["Web Development", "UI/UX Design"],
-        description: "A brief description of Project 1.",
-        href: "/projects/project1"
+        title: "Order Customized Cakes from Anywhere",
+        thumbnail: "",
+        categories: ["development", "design"],
+        description: "a web e-commerce platform where users can purchase pastries for Potchito's; a local pastry shop",
+        href: ""
     },
     {
-        title: "Project 2",
-        thumbnail: "/images/project2.jpg",
-        categories: ["Graphic Design", "Brand Identity"],
-        description: "A brief description of Project 2.",
-        href: "/projects/project2"
+        title: "Meet: Igris!",
+        thumbnail: "",
+        categories: ["design"],
+        description: "building a mascot for a construction company",
+        href: ""
     },
     {
-        title: "Project 3",
-        thumbnail: "/images/project3.jpg",
-        categories: ["Mobile Development", "App Design"],
-        description: "A brief description of Project 3.",
-        href: "/projects/project3"
+        title: "Building a System from the Ground Up",
+        thumbnail: "",
+        categories: ["development"],
+        description: "a purpose-built ticketing system I independently built from the framework up during my internship",
+        href: ""
+    },
+    {
+        title: "Visuals for a Google x National University Collaboration",
+        thumbnail: "",
+        categories: ["design"],
+        description: "how GDSC Bulldogs came to be on the POV of your's truly, the GDSC NU Baliwag's former Chief Creatives Officer",
+        href: ""
+    },
+    {
+        title: "Building a System from the Ground Up",
+        thumbnail: "",
+        categories: ["development"],
+        description: "a purpose-built ticketing system I independently built from the framework up during my internship",
+        href: ""
+    },
+    {
+        title: "A Pair of AI-Powered Micro-tools",
+        thumbnail: "",
+        categories: ["development"],
+        description: "two AI-powered projects made without a back-end. A reading aid that supports most languages and a face composition generator",
+        href: ""
     }
 ];

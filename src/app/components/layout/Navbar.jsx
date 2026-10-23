@@ -117,7 +117,7 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef, typingDelay 
             {/* The PNG is used as a mask, so the logo takes on the bar's text colour
                 (needs a transparent background). The hidden <img> only reserves the size. */}
             <span role="img" aria-label="reece santos" className="relative inline-block h-[30px]">
-              <img src={logo} alt="" aria-hidden="true" className="h-full w-auto opacity-0" />
+              <img src={logo} alt="logo here" className="h-full w-auto" />
               <span
                 aria-hidden="true"
                 className="absolute inset-0 bg-current"
