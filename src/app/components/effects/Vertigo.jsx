@@ -1,8 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MS_PER_PERCENT = 30; // a square grows 1% every 30ms (same pace as the old setInterval)
 const SPAWN_AT = 25; // start a new square once the newest reaches this size (%)
 const MAX_SQUARES = 10; // oldest squares are removed past this, for performance
+
+// Calculate opacity based on screen aspect ratio
+// 16:9 (1.78) = 100%, 4:3 (1.33) = 50%, 9:16 (0.56) = 25%
+const getOpacityFromRatio = (ratio) => {
+  if (ratio >= 1.78) return 1.0; // 16:9 or wider
+  if (ratio <= 0.56) return 0.25; // 9:16 or narrower
+
+  // Linear interpolation between 9:16 (0.56) and 16:9 (1.78)
+  const minRatio = 0.56;
+  const maxRatio = 1.78;
+  const minOpacity = 0.25;
+  const maxOpacity = 1.0;
+
+  return minOpacity + ((ratio - minRatio) / (maxRatio - minRatio)) * (maxOpacity - minOpacity);
+};
 
 /**
  * Endless "tunnel" of nested squares. Squares are created imperatively inside
@@ -10,6 +25,19 @@ const MAX_SQUARES = 10; // oldest squares are removed past this, for performance
  */
 export default function Vertigo() {
   const containerRef = useRef(null);
+  const [opacity, setOpacity] = useState(1.0);
+
+  // Update opacity based on screen aspect ratio
+  useEffect(() => {
+    const updateOpacity = () => {
+      const ratio = window.innerWidth / window.innerHeight;
+      setOpacity(getOpacityFromRatio(ratio));
+    };
+
+    updateOpacity();
+    window.addEventListener("resize", updateOpacity);
+    return () => window.removeEventListener("resize", updateOpacity);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -72,6 +100,7 @@ export default function Vertigo() {
       ref={containerRef}
       aria-hidden="true"
       className="absolute top-[20vh] -right-[5vw] size-[75vw] rotate-30 md:-top-[18vh] md:size-[min(90vh,90vw)]"
+      style={{ opacity }}
     />
   );
 }

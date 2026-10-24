@@ -1,9 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { asset } from "../../lib/asset";
 import { cn } from "../../lib/cn";
-import { typingDuration } from "../../lib/Typewriter";
 import AnimatedLink from "../ui/AnimatedLink";
-import TypeText from "../ui/TypeText";
 
 const DEFAULT_LINKS = [
   { label: "projects", href: "#projects" },
@@ -38,9 +36,8 @@ function CloseIcon(props) {
  * links        optional [{ label, href }] (defaults to projects / aboutMe / contacts)
  * contentRef   optional ref to the dark <main> that scrolls over the hero
  *              (falls back to the page's <main> element)
- * typingDelay  ms before the link labels start typing themselves, one after the other
  */
-export default function Navbar({ links = DEFAULT_LINKS, contentRef, typingDelay = 0 }) {
+export default function Navbar({ links = DEFAULT_LINKS, contentRef }) {
   const barRef = useRef(null);
   const toggleRef = useRef(null);
   const closeRef = useRef(null);
@@ -95,13 +92,6 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef, typingDelay 
 
   const logo = asset("assets/images/logo-dark.png");
 
-  // each label starts typing when the previous one has finished
-  const LABEL_SPEED = 45;
-  const labelDelays = links.reduce((delays, link, i) => {
-    delays.push(i === 0 ? typingDelay : delays[i - 1] + typingDuration(links[i - 1].label, LABEL_SPEED) + 80);
-    return delays;
-  }, []);
-
   return (
     <>
       <nav
@@ -136,7 +126,7 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef, typingDelay 
 
             {/* inline links from `sm` up; `contents` lets them sit directly in the row above */}
             <div className="hidden items-center gap-3 sm:contents">
-              {links.map((link, i) => (
+              {links.map((link) => (
                 <AnimatedLink
                   key={link.href}
                   href={link.href}
@@ -145,7 +135,7 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef, typingDelay 
                   iconSize="1rem"
                   className="text-base font-medium whitespace-nowrap transition-colors duration-300 sm:text-[1.3rem]"
                 >
-                  <TypeText text={link.label} delay={labelDelays[i]} speed={LABEL_SPEED} cursor={false} />
+                  {link.label}
                 </AnimatedLink>
               ))}
             </div>

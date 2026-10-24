@@ -16,6 +16,7 @@ import Button from "../components/ui/Button";
 import TypeText from "../components/ui/TypeText";
 import SocialButton from "../components/ui/SocialButton";
 import Timeline from "../components/ui/Timeline/Timeline";
+import BackToTop from "../components/ui/BackToTop";
 
 const ALWAYS_VISIBLE = 3;
 
@@ -116,7 +117,7 @@ export default function Overview() {
 
   return (
     <>
-      <Navbar links={NAV_LINKS} contentRef={mainRef} typingDelay={NAV_DELAY} />
+      <Navbar links={NAV_LINKS} contentRef={mainRef} />
 
       {/* HERO */}
       <header id="top" className="fixed inset-0 -z-10 flex justify-center overflow-hidden">
@@ -135,6 +136,7 @@ export default function Overview() {
           </div>
         </div>
       </header>
+      <BackToTop />
       <main
         ref={mainRef}
         style={{ "--peek": "clamp(3.5rem, 10svh, 6rem)" }}
@@ -229,7 +231,7 @@ export default function Overview() {
             <textarea
               ref={textareaRef}
               aria-label="Your message"
-              placeholder="Say 'Hi' here!"
+              placeholder="Come, say 'Hi'!"
               rows={2}
               onInput={autoGrow}
               className="w-full resize-none rounded-none border-b-4 border-l-4 border-primary bg-dark p-2 text-2xl text-light placeholder:text-light/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
