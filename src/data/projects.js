@@ -2,6 +2,7 @@ import { asset } from "../app/lib/asset";
 
 export const PROJECTS = [
     {
+        id: "potchitos",
         title: "Order Customized Cakes from Anywhere",
         thumbnail: asset("public/assets/project_thumbnails/thumbnail-potchitos.png"),
         categories: ["development", "design"],
@@ -9,6 +10,7 @@ export const PROJECTS = [
         href: ""
     },
     {
+        id: "igris",
         title: "Meet: Igris!",
         thumbnail: "public/assets/project_thumbnails/thumbnail-igris.png",
         categories: ["design"],
@@ -16,6 +18,7 @@ export const PROJECTS = [
         href: ""
     },
     {
+        id: "ticketsys",
         title: "Building a System from the Ground Up",
         thumbnail: "public/assets/project_thumbnails/thumbnail-ticketsys.png",
         categories: ["development"],
@@ -23,6 +26,7 @@ export const PROJECTS = [
         href: ""
     },
     {
+        id: "gdscbulldogs",
         title: "Visuals for a Google x National University Collaboration",
         thumbnail: "public/assets/project_thumbnails/thumbnail-gdscbulldogs.png",
         categories: ["design"],
@@ -30,6 +34,7 @@ export const PROJECTS = [
         href: ""
     },
     {
+        id: "aimicrotools",
         title: "A Pair of AI-Powered Micro-tools",
         thumbnail: "public/assets/project_thumbnails/thumbnail-aimicrotools.png",
         categories: ["development"],

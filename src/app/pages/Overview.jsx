@@ -6,6 +6,7 @@ import { asset } from "../lib/asset";
 import { cn } from "../lib/cn";
 import { smoothAnchors } from "../lib/smoothScroll";
 import { typingDuration } from "../lib/Typewriter";
+import { useScrollObserver } from "../lib/useScrollObserver";
 import Vertigo from "../components/Vertigo";
 import { ArrowIcon } from "../components/icons/Icons";
 import Navbar from "../components/layout/Navbar";
@@ -17,6 +18,7 @@ import TypeText from "../components/ui/TypeText";
 import SocialButton from "../components/ui/SocialButton";
 import Timeline from "../components/ui/Timeline/Timeline";
 import BackToTop from "../components/ui/BackToTop";
+import WipeAnimation from "../components/ui/WipeAnimation";
 
 const ALWAYS_VISIBLE = 3;
 
@@ -52,28 +54,35 @@ function shake(el) {
 }
 
 // Used for both the always-visible cards and the "view more" drawer, so it lives here once.
-function ProjectCard({ project }) {
+function ProjectCard({ project, index, forceVisible = false }) {
+  const { ref, isVisible } = useScrollObserver({ threshold: 0.1 });
+  const shouldShow = forceVisible || isVisible;
+
   return (
-    <article className="flex w-full flex-col self-start bg-primary transition-transform duration-100 ease-out hover:-translate-y-[5px]">
-      <img
-        src={asset(project.thumbnail)}
-        alt=""
-        loading="lazy"
-        className="h-[170px] w-full shrink-0 bg-semidark object-cover"
-      />
-      <div className="flex flex-col gap-[0.7rem] p-2.5">
-        <div>
-          <h3 className="text-[1.7rem] leading-[1.8rem] font-bold text-dark">{project.title}</h3>
-          <p className="text-base text-dark">{project.categories.map((c) => `[${c}]`).join(" ")}</p>
+    <WipeAnimation direction="down" duration={500} delay={600 + index * 100} start={shouldShow}>
+      <article ref={ref} className="flex w-full flex-col self-start bg-primary transition-transform duration-100 ease-out hover:-translate-y-[5px]">
+        <img
+          src={asset(project.thumbnail)}
+          alt=""
+          loading="lazy"
+          className="h-[170px] w-full shrink-0 bg-semidark object-cover"
+        />
+        <div className="flex flex-col gap-[0.7rem] p-2.5">
+          <div>
+            <h3 className="text-[1.7rem] leading-[1.8rem] font-bold text-dark">{project.title}</h3>
+            <p className="text-base text-dark">{project.categories.map((c) => `[${c}]`).join(" ")}</p>
+          </div>
+          <p className="line-clamp-3 text-base leading-5 break-words text-dark">{project.description}</p>
+          <div className="flex justify-end">
+            <WipeAnimation direction="right" duration={300} start={shouldShow}>
+              <Button variant="dark" href={project.href} icon={ArrowIcon}>
+                view
+              </Button>
+            </WipeAnimation>
+          </div>
         </div>
-        <p className="line-clamp-3 text-base leading-5 break-words text-dark">{project.description}</p>
-        <div className="flex justify-end">
-          <Button variant="dark" href={project.href} icon={ArrowIcon}>
-            view
-          </Button>
-        </div>
-      </div>
-    </article>
+      </article>
+    </WipeAnimation>
   );
 }
 
@@ -88,6 +97,14 @@ export default function Overview() {
 
   const featured = PROJECTS.slice(0, ALWAYS_VISIBLE);
   const more = PROJECTS.slice(ALWAYS_VISIBLE);
+
+  // Scroll observers for sections
+  const projectsSection = useScrollObserver({ threshold: 0.1, skipInitialCheck: true });
+  const aboutSection = useScrollObserver({ threshold: 0.1 });
+  const educationSection = useScrollObserver({ threshold: 0.1 });
+  const certificationsSection = useScrollObserver({ threshold: 0.1 });
+  const experiencesSection = useScrollObserver({ threshold: 0.1 });
+  const contactSection = useScrollObserver({ threshold: 0.1 });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -143,12 +160,14 @@ export default function Overview() {
         className="relative z-10 mt-[calc(100svh-var(--peek))] flex flex-col items-center bg-dark"
       >
         {/* PROJECTS */}
-        <Section id="projects">
-          <SectionTitle href="#projects">projects</SectionTitle>
+        <Section id="projects" ref={projectsSection.ref}>
+          <SectionTitle href="#projects">
+            <TypeText text="projects^" start={projectsSection.isVisible} delay={200} />
+          </SectionTitle>
 
           <div className={GRID_CLASS}>
-            {featured.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {featured.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
 
@@ -159,19 +178,19 @@ export default function Overview() {
                 id={drawerId}
                 inert={!open}
                 className={cn(
-                  "grid transition-[grid-template-rows] duration-400 motion-reduce:transition-none",
+                  "grid transition-all duration-500 ease-out motion-reduce:transition-none",
                   open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
               >
                 <div
                   className={cn(
-                    "overflow-hidden transition-[padding-top] duration-400 motion-reduce:transition-none",
+                    "overflow-hidden transition-all duration-500 ease-out motion-reduce:transition-none",
                     open ? "pt-2.5" : "pt-0",
                   )}
                 >
                   <div className={GRID_CLASS}>
-                    {more.map((project) => (
-                      <ProjectCard key={project.id} project={project} />
+                    {more.map((project, index) => (
+                      <ProjectCard key={project.id} project={project} index={index} forceVisible={open} />
                     ))}
                   </div>
                 </div>
@@ -192,40 +211,74 @@ export default function Overview() {
         </Section>
 
         {/* ABOUT */}
-        <Section id="me">
-          <SectionTitle href="#me">aboutMe</SectionTitle>
+        <Section id="me" ref={aboutSection.ref}>
+          <SectionTitle href="#me">
+            <TypeText text="aboutMe^" start={aboutSection.isVisible} delay={200} />
+          </SectionTitle>
           <div className="flex flex-col gap-4 md:flex-row">
-            <div className="aspect-square w-full max-w-[300px] shrink-0 bg-primary">
-              <img
-                src={asset("assets/images/me.png")}
-                alt="Portrait of Reece Santos"
-                className="size-full object-cover"
-              />
+            <div className="aspect-square w-full max-w-[300px] shrink-0 bg-primary overflow-hidden">
+              <WipeAnimation direction="left" duration={500} delay={600} start={aboutSection.isVisible}>
+                <img
+                  src={asset("assets/images/me.png")}
+                  alt="Portrait of Reece Santos"
+                  className="size-full object-cover"
+                />
+              </WipeAnimation>
             </div>
             <div className="flex flex-col justify-evenly gap-4">
-              <p className="-mt-2.5 text-[2.5rem] font-bold text-light md:text-5xl">'ello!</p>
-              <p className="text-xl md:text-2xl">
-                I'm Reece Santos, a graduating mobile and web developer from{" "}
-                <AnimatedLink href="https://www.national-u.edu.ph/nu-baliwag/" external>
-                  NU Baliwag
-                </AnimatedLink>{" "}
-                with a handful of experience in making graphics and systems work.
-              </p>
-              <p className="text-xl md:text-2xl">
-                Also makes use of my hobby; working on creative digital content as freelance and for organizations.
-              </p>
+              <TypeText
+                text="'ello!"
+                start={aboutSection.isVisible}
+                speed={50}
+                delay={700}
+                className="-mt-2.5 text-[2.5rem] font-bold text-light md:text-5xl"
+              />
+              <TypeText
+                text="I'm Reece Santos, a graduating mobile and web developer from NU Baliwag with a handful of experience in making graphics and systems work."
+                start={aboutSection.isVisible}
+                speed={20}
+                delay={1300}
+                className="text-xl md:text-2xl"
+              />
+              <TypeText
+                text="Also makes use of my hobby; working on creative digital content as freelance and for organizations."
+                start={aboutSection.isVisible}
+                speed={20}
+                delay={2500}
+                className="text-xl md:text-2xl"
+              />
             </div>
           </div>
         </Section>
 
         {/* TIMELINES */}
-        <Timeline id="education-timeline" title="education" items={EDUCATION} />
-        <Timeline id="certifications-timeline" title="certifications" items={CERTIFICATIONS} />
-        <Timeline id="experiences-timeline" title="experiences" items={EXPERIENCES} />
+        <Timeline
+          id="education-timeline"
+          title="education"
+          items={EDUCATION}
+          ref={educationSection.ref}
+          isVisible={educationSection.isVisible}
+        />
+        <Timeline
+          id="certifications-timeline"
+          title="certifications"
+          items={CERTIFICATIONS}
+          ref={certificationsSection.ref}
+          isVisible={certificationsSection.isVisible}
+        />
+        <Timeline
+          id="experiences-timeline"
+          title="experiences"
+          items={EXPERIENCES}
+          ref={experiencesSection.ref}
+          isVisible={experiencesSection.isVisible}
+        />
 
         {/* CONTACT */}
-        <Section id="contact">
-          <SectionTitle href="#contact">contacts</SectionTitle>
+        <Section id="contact" ref={contactSection.ref}>
+          <SectionTitle href="#contact">
+            <TypeText text="contacts^" start={contactSection.isVisible} delay={200} />
+          </SectionTitle>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <textarea
@@ -237,16 +290,20 @@ export default function Overview() {
               className="w-full resize-none rounded-none border-b-4 border-l-4 border-primary bg-dark p-2 text-2xl text-light placeholder:text-light/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
             />
             <div className="flex justify-end">
-              <Button type="submit" icon={ArrowIcon}>
-                send as email
-              </Button>
+              <WipeAnimation direction="right" duration={300} delay={400} start={contactSection.isVisible}>
+                <Button type="submit" icon={ArrowIcon}>
+                  send as email
+                </Button>
+              </WipeAnimation>
             </div>
           </form>
 
           <ul className="flex flex-wrap gap-4">
-            {SOCIALS.map((social) => (
+            {SOCIALS.map((social, index) => (
               <li key={social.label}>
-                <SocialButton {...social} />
+                <WipeAnimation direction="right" duration={300} start={contactSection.isVisible} delay={700 + index * 100}>
+                  <SocialButton {...social} />
+                </WipeAnimation>
               </li>
             ))}
           </ul>

@@ -18,7 +18,15 @@ import { useTypewriter } from "../../lib/Typewriter";
  * cursor    show the caret while typing (default true)
  * lingerMs  how long the caret keeps blinking after the last character (default 900)
  */
-export default function TypeText({ text, speed, delay, start, cursor = true, lingerMs = 900, className }) {
+export default function TypeText({
+  text,
+  speed,
+  delay,
+  start,
+  cursor = true,
+  lingerMs = 900,
+  className,
+}) {
   const { typed, started, done } = useTypewriter(text, { speed, delay, start });
   const [caretGone, setCaretGone] = useState(false);
 

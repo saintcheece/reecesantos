@@ -1,4 +1,5 @@
 import { cn } from "../../lib/cn";
+import { forwardRef } from "react";
 
 /**
  * Page section: centred 914px column that is at least one screen tall.
@@ -9,10 +10,11 @@ import { cn } from "../../lib/cn";
  * "100% + a margin". The top padding is always larger than the 4rem fixed navbar.
  * (svh = the smallest visible height, so mobile browser toolbars never cut a section short.)
  */
-export default function Section({ id, className, children }) {
+export default forwardRef(function Section({ id, className, children }, ref) {
   return (
     <section
       id={id}
+      ref={ref}
       className={cn(
         "flex min-h-svh w-full max-w-[calc(914px+2.5rem)] flex-col justify-center gap-4 px-5 pt-[max(5rem,9svh)] pb-[max(3rem,8svh)]",
         className,
@@ -21,4 +23,4 @@ export default function Section({ id, className, children }) {
       {children}
     </section>
   );
-}
+});

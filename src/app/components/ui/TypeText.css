@@ -21,10 +21,29 @@
   .type-caret--blink {
     animation: type-caret-blink 0.9s steps(1) infinite;
   }
+
+  .type-icon {
+    animation: type-icon-fade-in 0.3s ease-out;
+    display: inline-block;
+    vertical-align: baseline;
+    width: 1em;
+    height: 1em;
+  }
 }
 
 @keyframes type-caret-blink {
   50% {
     opacity: 0;
+  }
+}
+
+@keyframes type-icon-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-0.2em);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

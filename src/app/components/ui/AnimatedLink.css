@@ -6,7 +6,7 @@
   .animated-link {
     --link-color: var(--color-primary);
     position: relative;
-    display: inline-block; /* text wraps naturally and the arrow stays with the last word */
+    display: inline;
     color: var(--link-color);
     text-decoration: none;
     cursor: pointer;
@@ -40,7 +40,7 @@
     width: .75em;
     height: var(--icon-size, 1em);
     margin-left: .25em;
-    margin-top: -.25em;
-    vertical-align: middle;
+    margin-top: -.1em;
+    vertical-align: baseline;
   }
 }
