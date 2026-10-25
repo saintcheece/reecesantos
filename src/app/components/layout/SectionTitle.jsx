@@ -7,6 +7,7 @@ export default function SectionTitle({ href, children }) {
         href={href}
         thickness={7}
         duration={500}
+        icon={false}
         className="text-5xl font-black md:text-[4rem]"
       >
         {children}

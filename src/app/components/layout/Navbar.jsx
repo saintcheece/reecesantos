@@ -2,6 +2,9 @@ import { useEffect, useId, useRef, useState } from "react";
 import { asset } from "../../lib/asset";
 import { cn } from "../../lib/cn";
 import AnimatedLink from "../ui/AnimatedLink";
+import SocialButton from "../ui/SocialButton";
+import TypeText from "../ui/TypeText";
+import { SOCIALS } from "../../../data/profile";
 
 const DEFAULT_LINKS = [
   { label: "projects", href: "#projects" },
@@ -126,16 +129,16 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef }) {
 
             {/* inline links from `sm` up; `contents` lets them sit directly in the row above */}
             <div className="hidden items-center gap-3 sm:contents">
-              {links.map((link) => (
+              {links.map((link, index) => (
                 <AnimatedLink
                   key={link.href}
                   href={link.href}
                   tone={onDark ? "primary" : "dark"}
                   duration={500}
-                  iconSize="1rem"
+                  icon={false}
                   className="text-base font-medium whitespace-nowrap transition-colors duration-300 sm:text-[1.3rem]"
                 >
-                  {link.label}
+                  <TypeText text={`${link.label}^`} delay={index * 200} />
                 </AnimatedLink>
               ))}
             </div>
@@ -178,23 +181,45 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef }) {
         <div
           id={panelId}
           className={cn(
-            "absolute inset-y-0 right-0 flex w-[min(20rem,85vw)] flex-col gap-6 bg-dark px-8 pt-3 pb-10 transition-transform duration-300 ease-in-out",
+            "absolute inset-y-0 right-0 flex w-full flex-col bg-dark px-8 pt-6 pb-10 transition-transform duration-300 ease-in-out",
             menuOpen ? "translate-x-0" : "translate-x-full",
           )}
         >
-          <button
-            ref={closeRef}
-            type="button"
-            aria-label="Close menu"
-            onClick={() => closeMenu()}
-            className="-mr-3 grid size-11 cursor-pointer place-items-center self-end text-primary"
-          >
-            <CloseIcon className="size-7" />
-          </button>
+          <div className="flex justify-between items-start">
+            {/* Logo in top left, inverted (primary color) */}
+            <span role="img" aria-label="reece santos" className="relative inline-block h-[30px]">
+              <img src={logo} alt="logo here" className="h-full w-auto" />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-primary"
+                style={{
+                  WebkitMaskImage: `url("${logo}")`,
+                  maskImage: `url("${logo}")`,
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                }}
+              />
+            </span>
 
-          <nav aria-label="Mobile">
+            <button
+              ref={closeRef}
+              type="button"
+              aria-label="Close menu"
+              onClick={() => closeMenu()}
+              className="grid size-11 cursor-pointer place-items-center text-primary"
+            >
+              <CloseIcon className="size-7" />
+            </button>
+          </div>
+
+          {/* Nav buttons stacked in column, aligned left, with high margin from logo */}
+          <nav aria-label="Mobile" className="mt-24">
             <ul className="flex flex-col gap-6">
-              {links.map((link) => (
+              {links.map((link, index) => (
                 <li key={link.href}>
                   {/* no preventDefault: the browser scrolls to the section while the drawer slides shut */}
                   <AnimatedLink
@@ -212,6 +237,15 @@ export default function Navbar({ links = DEFAULT_LINKS, contentRef }) {
               ))}
             </ul>
           </nav>
+
+          {/* Social buttons at bottom in a row */}
+          <ul className="flex flex-wrap gap-4 mt-auto">
+            {SOCIALS.map((social) => (
+              <li key={social.label}>
+                <SocialButton {...social} />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </>
