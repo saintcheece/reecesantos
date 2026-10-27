@@ -60,7 +60,7 @@ export default function Contact() {
           placeholder="Say 'Hi' here!"
           rows={2}
           onInput={autoGrow}
-          className="w-full resize-none rounded-none border-b-4 border-l-4 border-primary bg-dark p-2 text-2xl text-light placeholder:text-light/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
+          className="w-full resize-none rounded-none border-b-4 border-l-4 border-primary bg-dark p-2 text-2xl text-light placeholder:text-light/60 focus:outline-none"
         />
         <div className="flex justify-end">
           <Button type="submit" icon={ArrowIcon}>

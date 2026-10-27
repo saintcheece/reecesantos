@@ -99,7 +99,7 @@ export default function Overview() {
   const more = PROJECTS.slice(ALWAYS_VISIBLE);
 
   // Scroll observers for sections
-  const projectsSection = useScrollObserver({ threshold: 0.1, skipInitialCheck: true });
+  const projectsSection = useScrollObserver({ threshold: 0.1 });
   const aboutSection = useScrollObserver({ threshold: 0.1 });
   const educationSection = useScrollObserver({ threshold: 0.1 });
   const certificationsSection = useScrollObserver({ threshold: 0.1 });
@@ -178,15 +178,21 @@ export default function Overview() {
                 id={drawerId}
                 inert={!open}
                 className={cn(
-                  "grid transition-all duration-500 ease-out motion-reduce:transition-none",
+                  "grid motion-reduce:transition-none",
                   open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
+                style={{
+                  transition: 'grid-template-rows 500ms ease',
+                }}
               >
                 <div
                   className={cn(
-                    "overflow-hidden transition-all duration-500 ease-out motion-reduce:transition-none",
+                    "overflow-hidden motion-reduce:transition-none",
                     open ? "pt-2.5" : "pt-0",
                   )}
+                  style={{
+                    transition: 'padding-top 500ms ease',
+                  }}
                 >
                   <div className={GRID_CLASS}>
                     {more.map((project, index) => (
@@ -287,7 +293,7 @@ export default function Overview() {
               placeholder="Come, say 'Hi'!"
               rows={2}
               onInput={autoGrow}
-              className="w-full resize-none rounded-none border-b-4 border-l-4 border-primary bg-dark p-2 text-2xl text-light placeholder:text-light/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
+              className="w-full resize-none rounded-none border-b-4 border-l-4 border-primary bg-dark p-2 text-2xl text-light placeholder:text-light/60 focus:outline-none"
             />
             <div className="flex justify-end">
               <WipeAnimation direction="right" duration={300} delay={400} start={contactSection.isVisible}>
