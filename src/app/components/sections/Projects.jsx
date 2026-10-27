@@ -26,15 +26,21 @@ export default function Projects({ items }) {
             id={drawerId}
             inert={!open}
             className={cn(
-              "grid transition-[grid-template-rows] duration-400 motion-reduce:transition-none",
+              "grid motion-reduce:transition-none",
               open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
             )}
+            style={{
+              transition: 'grid-template-rows 500ms ease',
+            }}
           >
             <div
               className={cn(
-                "overflow-hidden transition-[padding-top] duration-400 motion-reduce:transition-none",
+                "overflow-hidden motion-reduce:transition-none",
                 open ? "pt-2.5" : "pt-0",
               )}
+              style={{
+                transition: 'padding-top 500ms ease',
+              }}
             >
               <ProjectGrid projects={more} />
             </div>

@@ -23,7 +23,7 @@ export default function TypeText({
   speed,
   delay,
   start,
-  cursor = true,
+  cursor = false,
   lingerMs = 900,
   className,
 }) {

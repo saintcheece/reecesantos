@@ -24,6 +24,7 @@
     height: 20px;
     border-radius: 50%;
     background-color: var(--color-primary);
+    transform: scale(0);
   }
 
   /* connector from this dot down to the next one */
@@ -35,6 +36,52 @@
     width: 3px;
     height: calc(100% + 60px);
     background-color: var(--color-primary);
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  .timeline-item--visible:not(:last-child)::after {
+    animation: timeline-line-extend 500ms ease-out forwards;
+  }
+
+  .timeline-item--visible:nth-child(1):not(:last-child)::after {
+    animation-delay: 1000ms;
+  }
+
+  .timeline-item--visible:nth-child(2):not(:last-child)::after {
+    animation-delay: 1500ms;
+  }
+
+  .timeline-item--visible:nth-child(3):not(:last-child)::after {
+    animation-delay: 2000ms;
+  }
+
+  .timeline-item--visible:nth-child(4):not(:last-child)::after {
+    animation-delay: 2500ms;
+  }
+
+  .timeline-item--visible:nth-child(5):not(:last-child)::after {
+    animation-delay: 3000ms;
+  }
+
+  .timeline-item--visible:nth-child(6):not(:last-child)::after {
+    animation-delay: 3500ms;
+  }
+
+  .timeline-item--visible:nth-child(7):not(:last-child)::after {
+    animation-delay: 4000ms;
+  }
+
+  .timeline-item--visible:nth-child(8):not(:last-child)::after {
+    animation-delay: 4500ms;
+  }
+
+  .timeline-item--visible:nth-child(9):not(:last-child)::after {
+    animation-delay: 5000ms;
+  }
+
+  .timeline-item--visible:nth-child(10):not(:last-child)::after {
+    animation-delay: 5500ms;
   }
 
   @media (min-width: 640px) {
@@ -65,5 +112,23 @@
       top: 31px;
       left: 190px;
     }
+  }
+}
+
+@keyframes timeline-dot-inflate {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes timeline-line-extend {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
   }
 }
